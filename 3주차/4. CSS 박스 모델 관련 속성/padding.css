@@ -1,0 +1,23 @@
+/* div {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  padding: 20px;
+} */
+
+/* 100 x 100(px) 크기의 요소 만들기 */
+/* .box {
+  width: 60px; 
+  height: 80px;
+  background: red;
+  padding: 10px 20px;
+} */
+
+/*자동계산*/
+.box {
+  width: 100px; 
+  height: 100px;
+  background: red;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
