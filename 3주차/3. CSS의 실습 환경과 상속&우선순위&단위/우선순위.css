@@ -1,0 +1,22 @@
+.container {
+  width: 300px;
+  background-color: royalblue;
+  position:relative;
+}
+.container .item {
+  border: 4px dashed red;
+  background-color: orange;
+   width: 100px;
+  height: 100px;
+}
+.contaninter.item:nth-child(1) {
+ position: relative;
+  z-index: 1; 
+}
+.contaninter.item:nth-child(2) {
+ position: absolute;
+ top: 50px;
+  bottom: 50px;
+   z-index: 2;
+  
+}
