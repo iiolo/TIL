@@ -1,0 +1,46 @@
+div {
+  /*왼쪽정렬*/
+/*   text-align: left; */
+  
+/*  오른쪽정렬 */
+/*   text-align: right; */
+/*   가운데 정렬*/
+/*   text-align: center; */
+  /*양쪽맞춤*/
+/*   text-align: justify; */
+  
+/*   text-indent */
+/*   글자 오른쪽 들여쓰기 */
+/*  text-indent: 50px;  */
+  
+/*   글자 왼쪽 내여쓰기 */
+/*   text-indent: -10px; */
+  
+/*   text-indent: -10px; */
+}
+
+/* text-indent */
+.laura {
+/*   크기가 있어야지만 배경이미지 나옴 */
+  background: url("https://image.flaticon.com/icons/png/512/5332/5332354.png");
+  width:500px;
+  height: 500px;
+  text-indent:-9999px;
+  
+      
+}
+
+
+/* text-decoration */
+/* .laura {
+  font-size:80px; */
+  /*밑줄*/
+/*   text-decoration:underline; */
+  
+/*   윗줄 */
+/*   text-decoration: overline; */
+  
+/*   중앙선 */
+/*   text-decoration: line-through; */
+  
+/* } */
