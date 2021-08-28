@@ -1,0 +1,70 @@
+/* 1. order */
+/* .container{
+  border: 4px solid;
+   */
+/*   수평정렬 */
+/*   display: flex;
+} */
+/* .container .item{
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  border: 4px dashed red;
+  border-radius:10px;
+  font-size: 30px; */
+  
+/*   글자 정중앙 */  
+/*   각각 아이템이 새로운 콘테이너 박스 */
+/*   display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .item1 { */
+/*   1>23456 그래서 1이 맨뒤로 */
+/*   order: 1;
+}
+ */
+/* .item4{ */
+/*   순서 같을시 html 구조로 비교 */
+/*   order: 1;
+} */
+
+/* 6번 order 값이 제일 작아서 맨앞에 배치됨 */
+/* .item6 {
+  order: -1;
+} */
+  
+/* 2. flex-grow */
+.container {
+  border: 4px solid;
+  display: flex;
+}
+
+.container .item {
+
+/*   width: 100px; */
+  height: 100px;
+  
+  background: tomato;
+  border: 4px dashed red;
+  border-radius:10px;
+}
+
+.item1{
+  flex-grow: 1;
+}
+
+
+.item2 {
+/*   flex-grow: 2; */
+  
+/*   이렇게 할경우 2번부분의 변화는 없는 1번부분의 영역만 가로너비를 가변하게 설정할 수 있어 유용하다. */
+  width: 100px;
+}
+
+/* .item3 { */
+    /* 아이템 1과 아이템2에 가로값이 지정되어 있는 상태이기에 완벽히 2배는 아니다.*/
+/*   그래서 item3에만 width값 주기 */
+/*   width: 100px;
+} */
