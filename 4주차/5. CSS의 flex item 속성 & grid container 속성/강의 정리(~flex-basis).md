@@ -32,6 +32,11 @@
 
 ### 5. flex-basis: flex-item의 (공간 배분 전) 기본 너비 설정
 - width는 고정너비로 다른 개념이다.
+- 기본값인 auto 경우 width, height 등의 속성으로 item 너비 설정 가능 
+- 단위 값 주어질 경우 설정 할 수 없음
+- flex grow 비율대로 딱딱 설정하고 싶으면 flex basis를 0으로 하기
+- auto : 기본값으로 가변 item과 같은 너비, 요소 너비 설정하는 개념
+- 단위 : px, em, cm 등 단위로 지정, 단위로 준 기본 너비가 있는 나머지 영역만 가지고 증가너비가 영향을 준다.
 
 ### 6. align-self: 교차 축(cross-axis)에서 item의 정렬 방법 설정
 - item 하나에만 일시적 부여
