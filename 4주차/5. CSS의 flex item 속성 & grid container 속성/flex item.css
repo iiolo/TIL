@@ -36,7 +36,7 @@
 } */
   
 /* 2. flex-grow */
-.container {
+/* .container {
   border: 4px solid;
   display: flex;
 }
@@ -44,7 +44,7 @@
 .container .item {
 
 /*   width: 100px; */
-  height: 100px;
+/*   height: 100px;
   
   background: tomato;
   border: 4px dashed red;
@@ -56,15 +56,46 @@
 }
 
 
-.item2 {
+.item2 { */ 
 /*   flex-grow: 2; */
   
 /*   이렇게 할경우 2번부분의 변화는 없는 1번부분의 영역만 가로너비를 가변하게 설정할 수 있어 유용하다. */
-  width: 100px;
-}
+/*   width: 100px;
+} */
 
 /* .item3 { */
     /* 아이템 1과 아이템2에 가로값이 지정되어 있는 상태이기에 완벽히 2배는 아니다.*/
 /*   그래서 item3에만 width값 주기 */
 /*   width: 100px;
 } */
+
+/* 3.flex-basis */
+.container {
+  border: 4px solid;
+  display: flex;
+}
+
+.container .item {
+/*   width: 100px; */
+  height: 100px;
+  background: tomato;
+  border: 4px dashed red;
+  border-radius:10px;
+  
+/*   flex-basis: auto -> item 각각의 텍스트를 제외한 여백들이 1대 1대 1 비율로 맞춰짐 */
+  flex-grow: 1;
+  
+/*   각각의 item 전체너비 동일하게-> 전체너비로 1대 1대 1 */
+/*   flex-basis: 0; */
+  
+/*   기본적으로 flex-basis가 가질 100px를 제외한 나머지 여백을 가지고 1:1:2로 맞춰서 item 전체 너비 1:1:2와는 다름 */
+  flex-basis: 100px;
+  
+  
+}
+
+/* 클래스 클래스 같은 명시도 주기(덮어쓰기 하기위해서) */
+.container .item3 {
+/*   1:1:2 너비로 item 너비 맞춰짐 */
+  flex-grow: 2;
+}
