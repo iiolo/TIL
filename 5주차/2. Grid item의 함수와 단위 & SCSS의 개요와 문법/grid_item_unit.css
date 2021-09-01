@@ -1,0 +1,44 @@
+/* 1. fr */
+/* .container {
+  border: 10px solid lightgray;
+  display: grid; */
+/*   grid-template-columns: 1fr 1fr; */
+  
+/*   2. min-content max-content */
+/*   grid-template-columns: min-content 1fr; */
+/*   grid-template-columns: max-content 1fr; */
+  
+/*   한글 한글자씩 줄바꿈 방지 */
+/*   word-break: keep-all; */
+/* } */
+
+/* .item {
+  border: 10px solid red;
+  font-size: 20px;
+} */
+
+/*  3. auto-fill auto-fit */
+.container {
+/*   width: 600px; */
+/*   width: 500px; */
+  
+/*   container 밖으로 item 넘쳐있음 */
+/*   width: 400px; */
+/*   width: 300px; */
+/*   width: 200px; */
+  
+  border: 10px solid lightgray;
+  display: grid;
+/*   grid-template-columns: repeat(4, minmax(120px,1fr)); */
+  
+/*    반복횟수를 auto-fill로 지정시 */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  
+/*   암시적 행의 너비 */
+    grid-auto-rows: 100px;
+} 
+
+.item {
+  border: 10px solid red;
+  font-size: 20px;
+}
