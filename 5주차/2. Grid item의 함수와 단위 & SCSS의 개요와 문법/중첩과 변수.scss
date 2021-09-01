@@ -1,0 +1,65 @@
+// 중첩
+
+// .container {
+//     width:100;
+//     .item {
+//          width:200px;
+//     }
+// }
+
+.btn {
+    width: 100px;
+    height: 100px;
+    &.active {
+        color:red;
+    }
+}
+
+// font-size 약어
+.fs {
+    &-small {
+        font-size:14px;
+    }
+    &-medium {
+        font-size:16px;
+    }
+    &-large {
+        font-size:18px;
+    }
+}
+
+// @at-root
+.section {
+    // 변수
+    $width:100px;
+    $height:200px;
+    
+    width:$width;
+    height: $height;
+    
+    .item {
+        width:$width;
+        height:$height;
+    }
+    @at-root.box{
+    width:$width;
+    height:$height;
+    }
+}
+
+// .box{
+//     width:$width;
+//     height:$height;
+// }
+
+
+// 변수
+$color-primary: #e96900;
+$url-images: "/assets/images/";
+$w: 200px;
+
+.box {
+  width: $w;
+  margin-left: $w;
+  background: $color-primary url($url-images + "bg.jpg");
+}
