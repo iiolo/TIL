@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>부트스트랩</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- bootstrap.min.js 가져오기 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container" style="padding-top: 50px">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                   <!-- 오른쪽 메뉴바 -->
+                   <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#go_menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <!-- 이거 없애면 그냥 네모임 이거 세개 만들어야지 가로줄 세개 쫙쫙 -->
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#">
+                        bootstrap 강의
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="go_menu">
+                    <ul class="nav navbar-nav">
+                    <!-- 메뉴 추가 -->
+                        <li>
+                            <a href="">HTML</a>
+                        </li>
+
+                         <!-- 활성화     -->
+                        <li class="active">
+                            <a href="">PYTHON</a>
+                        </li>
+
+                        <li>
+                            <a href="">JAVASCRIPT</a>
+                        </li>
+
+                        <li>
+                            <a href="">PHP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    
+    </div>
+</body>
+</html>
