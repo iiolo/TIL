@@ -1,0 +1,153 @@
+// 함수
+// 정의한 column 개수에 따른 너비
+// columns(너비를 구하려는 열의 개수, 열의 개수, 전체 너비)
+// 매개변수에 기본값 정의
+// @function columns($number: 1, $columns: 12, $width: 1200px) {
+//     @return $width*($number/$columns);
+// }
+
+// .container {
+//     // $width: 980px;
+//     $width: 1200px;
+//     width:$width;
+//     .item:nth-child(1){
+
+//         width: columns();
+//     }
+//     .item:nth-child(2){
+//         width: columns(8);
+//     }
+//     .item:nth-child(3){
+//         width: columns(3);
+//     }
+// }
+
+// if 함수
+// $w: 555px;
+// $w:100px;
+// div {
+//     width: if($w > 300px, $w, null);
+//     height: 100px;
+// }
+// 예제
+// 특정한 사이즈를 검증하고 검증에 따라 다른 결과를 출력
+@function limitSize($size) {
+    // $size는 0~200 사이즈 수치면 if문 작동
+    @if($size >= 0 and $size <= 200){
+        @return 200px;
+    }@else {
+        @return 800px;
+    }
+}
+
+div {
+    width : limitSize(180px);
+    width : limitSize(340px);
+}
+
+@mixin positionCenter($w, $h, $p: absolute){
+    @if(
+    $p == absolute 
+    or $p == fixed 
+    or not $p == relative 
+    or not $p == static
+    ){
+    width: if(unitless($w),#{$w}px, $w);
+    height: if(unitless($h),#{$h}px, $w);
+    position: $p;
+    
+    // position을 통한 가운데 정렬 위해
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
+}
+
+.box1{
+  @include positionCenter(10px,20px);  
+}
+.box2{
+    @include positionCenter(50, 50, fixed)
+}
+.box3{
+    // relative, static 값을 가지는 요소는 position 가운데를 쓸 수 없다. 그래서 위에 if문 추가
+    @include positionCenter(100,200, relative)
+}
+
+// 반복문
+// @for
+
+// through
+// 안의 내용이 index 값 4에서부터 10까지 반복
+@for $index from 4 through 10 {
+    // 문자보관 필수
+    .through:nth-child(#{$index}) {
+        width: 20px * $index;
+        
+    }
+}
+
+// to
+// 안의 내용이 index 값 4에서부터 10 직전까지 반복
+@for $index from 4 to 10 {
+    // 문자보관 필수
+    .through:nth-child(#{$index}) {
+        width: 20px * $index;
+        
+    }
+}
+
+// @each
+// list 데이터
+// 다음 두 List 데이터는 동일하다
+// $fruits: (apple, orange, banana, mango);
+// $fruits: apple, orange, banana, mango;
+
+// fruits 클래스 안에서 li 태그 반복
+// .fruits {
+    // $fruit는 리스트 데이터 $fruits안에 들어 있는 매개변수이다
+    // @each $fruit in $fruits {
+        // 내장함수 index(list데이터, list 내 몇번째에 속하는지 알고싶은 데이터) 통해List 내 데이터들의 인덱스를 지정
+    //     $index: index($fruits, $fruit);
+        
+    //     li:nth-child(#{$index}) {
+    //         left: 50px * $index;
+    //         background: url("/images/#{$fruit}.png");
+    //     }
+    // }
+    // }
+
+// map 데이터
+$fruits-data: (
+    apple: korea,
+    orange: china,
+    banana: japan
+);
+@each $fruit, $country in $fruits-data {
+    // map-keys($fruits-data) => (apple, orange, banana)
+    // map-values($fruits-data) => (korea, china, japan)
+    $fruits-data-key-list: map-keys($fruits-data);
+    
+    // 인덱스화
+    $index: index($fruits-data-key-list, $fruit);
+    
+    .box-#{$fruit} {
+        width: 100px * $index;
+        background: url("/images/#{$country}.png");
+    }
+}
+
+// 내장함수
+// 문자함수
+div {
+    // xxx가 abcd의 cd 사이(4번째)에 들어가게 하기
+    width: str-insert("abcd", "xxx", 4);
+    
+    // c는 abcd에서 세번째에 해당된다.
+    height: str-index("abcd", "c");
+    
+    // abcd에서 숫자 3에 위치하는 알파벳부터 마지막위치하는 알파벳까지 잘라내기
+    position: str-slice("abcd", 3);
+}
