@@ -1,0 +1,131 @@
+
+/* body { */
+    /* roboto 폰트 적용 안나올 경우 sans serif 적용 */
+    /* font-family: 'Roboto', sans-serif;
+    font-size: 100px;
+} */
+
+/* COMMON */
+.body__container {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+    /* normal */
+    font-weight: 400;
+    color: #333;
+}
+
+
+/* BTN */
+.btn {
+    /*   width: 300px; */
+    /*   height: 60px; */
+      height: 30px;
+      
+    /*   흰색에 가까운 색,red에서 blue로 변화하는 튀어 나온 것처럼 그라데이션(아래값을 향하는 방향) 추가 */
+    /*   background: #eee linear-gradient(to bottom, red, blue); */
+      
+      background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 4px;
+      
+    /*   텍스트 중앙 정렬 */
+    /*   block 요소 처럼 만들어져서 가로 사이즈 auto(100%와 유사) */
+    /*   display: flex; */
+      
+    /*   inline 요소 처럼 그 안에 들어있는 content의 너비만큼 가로 축소 */
+      display: inline-flex;
+      
+    /*   수직 가운데 정렬 */
+      align-items: center;
+      
+      padding: 0 12px;
+      
+      font-size: 14px;
+      font-weight: 500;
+      
+    /*   줄간격(행간격) */
+      line-height: 1.5;/*1.5배*/
+      
+    /*   마우스 올렸을 때 커서가 손가락 모양으로 변경 */
+      cursor: pointer;
+      
+      box-sizing: border-box;
+      
+    /*   position 값 없는데 추가하는 경우에는 relative 값으로 추가 */
+      position: relative;
+      
+    }
+    
+    /* 마우스가 버튼 위에 올라가 있다는 것을 버튼을 통해 표현해 주고 싶을 때 */
+    .btn:hover::before {
+      content:"";
+      
+    /*   이버튼의 절대위치 사용(부모요소에 position 값 있는지 확인 후 작성)*/
+      position: absolute;/*부모요소 배치 기준*/
+      top: 0;
+      left: 0;
+      width: 100%; /*부모요소의 가로너비 전체 사용*/
+      height: 100%;/*부모요소의 세로너비 전체 사용*/
+      
+    /*   검정색을 사용하되 투명도는 0.07퍼센트 사용 */
+      background: rgba(0,0,0,0.07);
+    }
+    
+    /* 기본적인 상태를 가지고 있는 버튼 */
+    .btn.btn--primary {
+      border: 1px solid #65b836;
+      color: #fff;
+      background: #55a532 linear-gradient(#91dd70, #55ae2e);
+    }
+    
+    /* 성공 버튼 */
+    /* .btn--success {
+      
+    }
+     */
+    /* 위험 버튼 */
+    /* .btn--danger{
+      
+    } */
+    
+    /* 주의사항 버튼 */
+    /* .btn--warning {
+      
+    } */
+
+    /* INPUT TEXT */
+    .input--text{
+        height: 34px;
+        padding: 0 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        outline: none;
+        box-shadow:inset 0 1px 2px rgba(0,0,0,0.075);
+        font-size: 16px;
+      }
+      
+      .input--text:focus {
+        border-color: #51a7e8;
+        
+      /*   다중 그림자 입력 */
+        box-shadow:inset 0 1px 2px rgba(0,0,0,0.075), 
+                    0 0 5px rgba(81, 167, 232, 0.5);
+      }
+      
+      .input--text::webkit-input-placeholder {
+        color: #cacaca;
+      }
+      
+      .input--text::ms-input-placeholder {
+        color: #cacaca;
+      }
+      
+      .input--text::moz-input-placeholder {
+        color: #cacaca;
+      }
+    
+    
+    
+    
