@@ -94,7 +94,7 @@
     <header class="section">
         <div class="inner">
 
-            <!-- 왼쪽 메뉴 구성 -->
+            <!-- header의 왼쪽 콘텐츠 구성 -->
             <div class="menu-group">
                 
                 <div class="logo">
@@ -103,65 +103,47 @@
 
                 <ul class="main-menu">
 
-                    <!-- 링크가 걸려있는 항목 만들기 -->
-                    <li><a href="#">Personal</a></li>
-                    <li><a href="#">Open Source</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Explore</a></li>
-                    
+                  <!-- 링크가 걸려있는 항목 만들기 -->
+                  <li><a href="#">Personal</a></li>
+                  <li><a href="#">Open Source</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Explore</a></li>
+                  
                 </ul>
+            </div>
+
+            <!-- header의 오른쪽 콘텐츠 구성 -->
+            <div class="sign-group">
+
+              <!-- button -->
+              <div class="btn-group">
+                <a href="#" class="btn sign-in">Sign in</a>
+                <a href="#" class="btn btn--primary sign-up">Sign up</a>
+              </div>
+
+              <!-- search 양식 -->
+              <form id="search-form" method="POST" action="">
+                <input type="text" id="search" class="input--text" placeholder="Search Github">
+
+                <!-- 서버로 데이터 전송버튼 -->
+                <input type="submit" value="Submit">
+              </form>
+
+              <!-- 서브 메뉴 -->
+              <ul class="sub-menu">
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+
+              </ul>
+
             </div>
 
         </div>
     </header>
 </div>
 
-    <!-- BEM -->
-        <!-- ~의 일부분이다. -->
-    <div class="container">
-        <div class="container__item"></div>
-    </div>
-
-        <!-- ~의 상태이다 -->
-    <div class="btn--success"></div>
-    <div class="btn--danger"></div>
-    <div class="btn--warning"></div>
-
-        <!-- 통짜 이름 표현 -->
-        <!-- toggle-btn이 이름임 -->
-    <div class="toggle-btn"></div>
-
-
-<!-- 버튼 요소 생성 -->
-<!-- btn -->
-<div class="btn">
-    Hello world good job
-  </div>
-  
-  <div class="btn btn--primary">
-    Primary
-  </div>
-  
-  <div class="btn">
-    Hello
-  </div>
-  
-  <div class="btn">
-    world
-  </div>
-  
-  <div class="btn">
-    good
-  </div>
-
-<!-- 입력양식 -->
-<!-- input의 text 요소인 것 정의 -->
-<!-- <input type="text" class="input--text"> -->
-
-<!-- input 요소 힌트 제공 만들기 placeholder -->
-<input type="text" class="input--text" placeholder="Search GitHub">
-<input type="text" class="input--text" placeholder="Hello">
-<input type="text" class="input--text" placeholder="World">
+    
   
 
 
