@@ -309,10 +309,31 @@ header .sub-menu li a:hover {
 }
 
 /*VISUAL*/
+/* section 정의 */
 .section--visual {
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-position: bottom left;
+
+  /* 화면 커져도 배경이미지 안잘리게 하기 */
+  background-size: cover;
+}
+
+/* 배경 앞 어두운 요소 깔아서 배경 어둡게 만들기 */
+.section--visual::before {
+  content: "";
+
+  /* 절대위치 만들어주기 */
+  /* width: 100%;
+  height: 100%; 와 동일한 효과 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 어두운 배경 */
+  background: rgba(0,0,0,.3);
 }
 
 .section--visual .inner {
@@ -324,9 +345,23 @@ header .sub-menu li a:hover {
   padding: 160px 0;
 
 }
-.section--visual .summary {
+.section--visual .summary__title {
+  color: #fff;
+  font-size: 54px;
 
+  /* 첫번째 그림자는 블러가 1px이라 뒷쪽배경과 구분된 느낌이 나지만 은은한 효과 */
+  text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+               0 1px 25px rgba(0, 0, 0, .75);
+ㄴ
 }
+.section--visual .summary__description {
+  color: #fff;
+
+  /* 첫번째 그림자는 블러가 1px이라 뒷쪽배경과 구분된 느낌이 나지만 은은한 효과 */
+  text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+               0 1px 25px rgba(0, 0, 0, .75);
+}
+
 
 
     
