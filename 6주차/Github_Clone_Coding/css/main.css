@@ -20,7 +20,6 @@
     text-decoration: none;
   }
 
-
 /* BTN */
 .btn { 
   /*   width: 300px; */
@@ -87,9 +86,6 @@
     background: #55a532 linear-gradient(#91dd70, #55ae2e);
   }
 
-  
-
-
 /* INPUT TEXT */
 .input--text{
     height: 34px;
@@ -123,6 +119,23 @@
       color: #cacaca;
   }
 
+/* FLOAT CLEARFIX  */
+/* float 속성 공통정의 */
+ /* 부모요소 float 속성 해제 */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+  /* float:left 속성 가질 요소 */
+.float--left {
+  float: left;
+}
+  /* float:right 속성 가질 요소 */
+.float--right {
+  float: right;
+}
+
 
 /* HEADER */
 header {
@@ -131,6 +144,8 @@ header {
     background: white;
 }
 
+
+/* menu-group과 sign-group의 부모요소 */
 header .inner {
 
   /* header 높이 지정 */
@@ -155,6 +170,9 @@ header .menu-group {
 
   /* header 안에서 메인 메뉴 그룹 수직 가운데  정렬 */
   align-items: center; /*메뉴그룹 높이의 수직정력*/
+
+  /* header 왼쪽 배치(공통속성으로 정의) */
+  /* float: left; */
 }
 
 header .logo {
@@ -191,5 +209,67 @@ header .main-menu li a{
 header .main-menu li a:hover{
   color: #4078c0;
 }
-    
+
+  /* header 오른쪽 콘텐츠 */
+header .sign-group{
+  display: flex;
+
+  /* header 오른쪽 배치(공통속성으로 정의) */
+  /* float: right; */
+
+  /* header 가운데 수직 정렬 */
+  align-items: center;
+  height: 100%;
+}
+
+
+  /* 화면 클시 서브메뉴>search양식>버튼 순서 */
+header .btn-group {
+  order: 2;
+
+  /* 띄어쓰기 제거 및 수평정렬 */
+  display: flex;
+}
+
+header .btn-group .sign-in {
+    /* 버튼 사이 공간 제어 */
+    margin-right: 4px;
+}
+
+#search-form {
+  order: 1;
+  margin-right: 12px;
+}
+
+#search {
+    width: 160px;
+    font-size: 14px;
+}
+
+    /* id="search"을 가지는 요소의 다음 형제 요소 중 type="submit"을 가지는 요소 선택 */
+#search + [type="submit"] {
+    /* submit 버튼 화면상에서 사라지게 */
+   display: none;
+}
+
+header .sub-menu{
+  /*order: 0;*/
+    /* 수평정렬 */
+    display: flex;
+    margin-right: 10px;
+}
+
+header .sub-menu li a {
+    padding: 8px;
+    display: block;
+    font-size: 13px;
+    color: #3c4146;
+}
+
+header .sub-menu li a:hover {
+    color: #4078c0;
+}
+
+
+
     
