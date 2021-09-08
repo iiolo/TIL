@@ -136,6 +136,43 @@
   float: right;
 }
 
+/* SUMMARY*/
+.summary {
+
+}
+
+.summary__title{
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+
+
+}
+
+.summary__description{
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+
+}
+
+/* SECTION & INNER */
+.section {
+  position: relative;
+}
+
+.section .inner {
+  width: 980px;
+  margin: 0 auto;
+
+  /* padding과 border 들어갔을 때 요소가 커지지 않게 방지 */
+  box-sizing: border-box;
+
+  /* inner 기준 배치 */
+  position: relative;
+}
 
 /* HEADER */
 header {
@@ -148,15 +185,16 @@ header {
 /* menu-group과 sign-group의 부모요소 */
 header .inner {
 
-  /* header 높이 지정 */
+  
   /* 최대 너비가 980이고 그 이하로는 변동 될 수 있다. */
-  max-width: 980px;
+  /* max-width: 980px; */
+  /* 980px 가로너비의 영역이 가운데 정렬 */
+  /* margin: 0 auto; */
 
+  /* header 높이 지정 */
   height: 78px;
 
-  /* 980px 가로너비의 영역이 가운데 정렬 */
-  margin: 0 auto;
-
+  
 
 }
 
@@ -270,6 +308,25 @@ header .sub-menu li a:hover {
     color: #4078c0;
 }
 
+/*VISUAL*/
+.section--visual {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.section--visual .inner {
+  /* 화면 중앙정렬 */
+  /* max-width: 980px;
+  margin: 0 auto; */
+
+  /* 위아래 여백 추가 */
+  padding: 160px 0;
+
+}
+.section--visual .summary {
+
+}
 
 
     
