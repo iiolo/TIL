@@ -344,7 +344,27 @@ header .sub-menu li a:hover {
   /* 위아래 여백 추가 */
   padding: 160px 0;
 
+  /* 텍스트 영역과 양식 영역 수평 정렬 */
+  display: flex;
+
 }
+
+.section--visual .summary{
+  /* 단축속성 flex : flex-grow(기본값: 0) flex-shrink(기본값: 1) flex-basis(기본값:1); */
+  flex: 1;
+
+  /* 개별 속성 flex */
+  /* 전체 영역 가변하는 것 대비해서 나머지 영역을 1의 비율로 차지 */
+  /* flex-grow: 1; */
+  /* form 영역이 쪼그라드는 문제점 해결 */
+  /* flex-basis: 0; */
+
+  /* summary 영역과 form 영역 사이 공백 생성 */
+  margin-right: 90px;
+
+  
+}
+
 .section--visual .summary__title {
   color: #fff;
   font-size: 54px;
@@ -352,8 +372,9 @@ header .sub-menu li a:hover {
   /* 첫번째 그림자는 블러가 1px이라 뒷쪽배경과 구분된 느낌이 나지만 은은한 효과 */
   text-shadow: 0 1px 1px rgba(0,0,0,.25), 
                0 1px 25px rgba(0, 0, 0, .75);
-ㄴ
+
 }
+
 .section--visual .summary__description {
   color: #fff;
 
@@ -362,6 +383,44 @@ header .sub-menu li a:hover {
                0 1px 25px rgba(0, 0, 0, .75);
 }
 
+#sign-form {
+  /* form의 고정너비 설정 */
+  width: 340px;
+}
 
+#sign-form li{
+  /* li 태그 간의 여백 생성 */
+  margin-bottom: 17px;
 
+  /* 내리기 위해 위쪽 여백 추가 */
+  margin-top: 16px;
+}
+
+#sign-form li:last-child{
+  /* 마지막 li 태그 밑 여백 제거 */
+  margin-bottom: 0;
+}
+
+#sign-form .input--text {
+  width: 100%;
+  height: 40px;
+
+}
+
+#sign-form .caption{
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#sign-form [type="submit"]{
+  width: 100%;
+  height: 62px;
+  padding: 0 25px;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
     
