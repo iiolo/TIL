@@ -149,13 +149,13 @@
             <!-- 텍스트 영역 -->
             <div class="summary">
 
-                <div class="summary__title">
+                <h2 class="summary__title">
                     How&nbsp;people build&nbsp;software
-                </div>
+                </h2>
 
-                <div class="summary__description">
+                <p class="summary__description">
                     Millions of developers use GitHub to build personal projects, support their businesses, and&nbsp;work together on open source technologies.
-                </div> 
+                </p> 
 
             </div>
 
@@ -193,16 +193,17 @@
         </div>
     </section>
 
+
     <!-- FEATURE -->
     <section class="section section--feature">
         <div class="summary">
-            <div class="summary__title">
+            <h2 class="summary__title">
                 Welcome home, developers
-            </div>
+            </h2>
 
-            <div class="summary__description">
+            <p class="summary__description">
                 GitHub fosters a fast, flexible, and collaborative development process that lets you work on your own or with others.
-            </div>
+            </p>
 
         </div>
 
@@ -216,16 +217,133 @@
         </div>
 
         <div class="tiles">
+            <!-- 가운데 정렬 -->
+            <div class="inner">
+                <ul class="clearfix">
+                    <li>
+                        <img src="./img/feature-tile__build.png" alt="build">
 
+                         <!-- 제목 -->
+                        <h3>For everything you build</h3>
+
+                        <!-- 설명 -->
+                        <p>Host and manage your code on GitHub. You can keep your work private or share it with the world.</p>
+                    </li>
+
+                    <li>
+                        <img src="./img/feature-tile__work.png" alt="work">
+                        <h3>A better way to work</h3>
+                        <p>From hobbyists to professionals, GitHub helps developers simplify the way they build software.</p>
+                    </li>
+                
+                    <li>
+                        <img src="./img/feature-tile__projects.png" alt="projects">
+                        <h3>Millions of projects</h3>
+                        <p>GitHub is home to millions of open source projects. Try one out or get inspired to create your own.</p>
+                    </li>
+                    
+                    <li>
+                        <img src="./img/feature-tile__platform.png" alt="platform">
+                        <h3>One platform, from start to finish</h3>
+                        <p>With hundreds of integrations, GitHub is flexible enough to be at the center of your development process.</p>
+                    </li>
+                    
+
+                    
+                </ul>
+            </div>
         </div>
 
     </section>
 
+    <!-- Where is section -->
+    <section class="section section--where-is">
+        <div class="inner">
+            <div class="summary">
+                <div class="summary__title">
+                    Where is GitHub?
+                </div>
+
+                <div class="summary__description">
+                    GitHub is where people build software. More than 18 million people use GitHub to discover, fork, and contribute to over 48 million projects.
+                </div>
+
+            </div>
+
+            <!-- 지도가 삽입될 공간 -->
+            <div id="map">
+
+            </div>
+
+        </div>
+    </section>
 </div>
+
+<!-- Pricing card -->
+<section class="section section--pricing">
+    <div class="inner">
+
+        <!-- 두개의 column들 가지고 있는 하나의 카드 정의 -->
+        <div class="card">
+
+            <div class="cell cell1">
+                <!-- 회원가입 페이지 이동하는 버튼 -->
+                <a href="#" class="btn btn--primary">Sign up for GitHub</a>
+            </div>
+
+            <div class="cell cell2">
+                Public projects are always free. Work together across unlimited private repositories for $7 / month.
+
+            </div>
+        </div>
+    </div>
+</section>
+
 
     
   
 
+<!-- 구글 api JS -->
+<script>
+    function initMap() {
 
+        // 지도 최초 나올 때 나오는 위도 경도 설정
+        const myLatLng = {
+            lat: 37.782293,
+            lng: -122.391240
+        }
+
+        // google maps에 있는 Map 실행
+        const map = new google.maps.Map(
+            // 지도가 삽입될 공간 입력
+             document.getElementById('map'),
+
+            //  지도가 표시되기 위한 옵션
+            {
+                center: myLatLng,
+
+                // 지도 영역내에서 스크롤 할시 확대 축소 방지
+                scrollwheel: false,
+
+                // myLatLng의 확대 상태
+                zoom: 18
+            }
+        );
+
+        const marker = new google.maps.Marker({
+            // marker 위치 설정
+            position: myLatLng,
+
+            // 지도 설정
+            map: map,
+
+            // 제목 설정
+            title:'GitHub'
+        });
+    }
+</script>
+
+<!-- 외부 자바스크립트로 api를 실행할 수 있는 주소 호출 -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap" async defer></script>
 </body>
 </html>

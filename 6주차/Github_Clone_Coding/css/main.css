@@ -164,7 +164,7 @@
 }
 
 .section .inner {
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
 
   /* padding과 border 들어갔을 때 요소가 커지지 않게 방지 */
@@ -444,7 +444,7 @@ header .sub-menu li a:hover {
 
 .section--feature .video {
   /* 가로너비 650px 이하시 사이즈 자동생성ㄴ */
-  min-width: 650px;
+  max-width: 650px;
 
   /* 가운데 정렬을 하면서도 위아래 50px 여백 주기 */
   margin: 50px auto;
@@ -474,3 +474,150 @@ header .sub-menu li a:hover {
 
 }
 
+.section--feature .tiles {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+
+}
+
+.section--feature .tiles .inner {
+  /* section inner max-width 값 위에 덮어씌우기 */
+  max-width: 1200px;
+}
+
+/* grid 사용해서 4개 컬럼 구성시 */
+/* .section--feature .tiles ul { */
+  /* grid-container로 만들기 */
+  /* display: grid; */
+
+  /* 4개의 column을 가지는 grid 생성 */
+  /* grid-template-columns: repeat(4, 1fr);
+  
+} */
+
+/* float 사용시 */
+.section--feature .tiles ul {
+
+
+}
+
+
+.section--feature .tiles li {
+  /* 위아래 34 좌우 24 내부 여백 추가 */
+  padding: 34px 24px;
+
+  /* 텍스트 중앙 정렬 */
+  text-align: center;
+
+  /* 읽기 좋게 행간 추가 */
+  line-height: 1.5;
+
+  /* 아이템 사이 선 추가 */
+  border-right: 1px solid #e5e5e5;
+
+  /* 선 추가 시 공간 커짐 방지 */
+  box-sizing: border-box;
+
+
+  /* float 사용시 */
+  float: left;
+
+    /* 4개의 column이니까 100%/4=25% */
+  width: 25%;
+}
+
+.section--feature .tiles li:last-child {
+  border-right: none;
+}
+
+/* 이미지 태그 정의 */
+.section--feature .tiles li img {
+
+  /* 부모요소에 크기 맞추기 */
+  max-width: 100%;
+
+  /* 내부여백 추가 */
+  padding: 14px 10% 24px;
+
+  /* padding을 통해 커지지 않도록 방지 */
+  box-sizing: border-box;
+}
+
+.section--feature .tiles li h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.section--feature .tiles li p {
+  font-size: 14px;
+  color: #767676;
+}
+
+/* WHERE IS */
+.section--where-is {
+
+}
+
+.section--where-is .inner{
+  /* 위쪽 여백 추가 */
+  padding-top: 80px;
+}
+
+#map{
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-bottom: none;
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  box-sizing: border-box;
+
+}
+
+/* PRICING CARD */
+.section--pricing{
+
+  /* 배경 위쪽에서 아래쪽으로 그라데이션 색상 */
+  background: linear-gradient(#f5f5f5,#fff);
+
+}
+
+.section--pricing .inner {
+  padding: 80px 0;
+}
+
+.section--pricing .card {
+  /* 버튼과 텍스트 수평화 */
+  display: flex;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.section--pricing .card .cell{
+  padding: 24px;
+  display: flex;
+
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+
+  /* 수직 가운데 정렬 */
+  align-items: center;
+}
+
+.section .pricing .card .cell1 .btn{
+  height: 56px;
+  font-size: 16px;
+}
+
+.section--pricing .card .cell2 {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+
+  /* 텍스트 칸 유연하게 변화 */
+  flex: 1; /*flex-basis 0인 상태*/
+
+   border-left: 1px solid #e5e5e5;
+}
