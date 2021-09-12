@@ -39,7 +39,8 @@
     /* display: flex; */
     
   /*   inline 요소 처럼 그 안에 들어있는 content의 너비만큼 가로 축소 */
-    display: inline-flex;
+    /* display: inline-flex; */
+    display: flex;
     
   /*   수직 가운데 정렬 */
     align-items: center;
@@ -178,7 +179,7 @@
 header {
     border-bottom: 1px solid rgba(0,0,0,.75);
     box-shadow: 0 0 5px rgba(0,0,0,.75);
-    background: white;
+    background: #fff;
 }
 
 
@@ -203,12 +204,13 @@ header .menu-group {
   /* 로고와 메인메뉴 그룹 수평 정렬 */
   display: flex;
 
+  /* header 안에서 메인 메뉴 그룹 수직 가운데  정렬 */
+  align-items: center; /*메뉴그룹 높이의 수직정렬*/
+
   /* 부모요소 inner의 영향을 받아서 inner 높이 78px의 100%만큼의 높이 가짐 */
   height: 100%;
 
-  /* header 안에서 메인 메뉴 그룹 수직 가운데  정렬 */
-  align-items: center; /*메뉴그룹 높이의 수직정력*/
-
+  
   /* header 왼쪽 배치(공통속성으로 정의) */
   /* float: left; */
 }
@@ -233,7 +235,6 @@ header .logo a:hover {
 header .main-menu {
   /* 메인 메뉴 수평정렬 */
   display: flex;
-
   
 }
 
@@ -308,9 +309,35 @@ header .sub-menu li a:hover {
     color: #4078c0;
 }
 
+#toggle-btn{
+  /* 일반적인 상황에는 없음 */
+  display: none;
+
+  /* toggle-btn 미리 정의 */
+  background: url("../img/toggle-btn.svg");
+
+    /* 토글 이미지 사이즈 지정 */
+    width: 18px;
+    height: 24px;
+    
+    /* toggle-btn 부모요소(inner) 기준 배치 */
+    position: absolute;
+
+    top: 16px;
+    right: 20px;
+
+    /* 커서포인트 손가락 모양으로 바꿔주기 */
+    cursor: pointer;
+
+    /* #toggle-btn 안 콘텐츠를 대체 텍스트화 */
+    text-indent: -9999px;
+  
+}
+
 /*VISUAL*/
 /* section 정의 */
 .section--visual {
+  position: relative;
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-position: bottom left;
@@ -386,14 +413,16 @@ header .sub-menu li a:hover {
 #sign-form {
   /* form의 고정너비 설정 */
   width: 340px;
+
+  /* 내리기 위해 위쪽 여백 추가 */
+  margin-top: 16px;
 }
 
 #sign-form li{
   /* li 태그 간의 여백 생성 */
   margin-bottom: 17px;
 
-  /* 내리기 위해 위쪽 여백 추가 */
-  margin-top: 16px;
+  
 }
 
 #sign-form li:last-child{
@@ -420,7 +449,6 @@ header .sub-menu li a:hover {
   height: 62px;
   padding: 0 25px;
   font-size: 20px;
-  text-align: center;
   justify-content: center;
 }
 
@@ -555,10 +583,6 @@ header .sub-menu li a:hover {
 }
 
 /* WHERE IS */
-.section--where-is {
-
-}
-
 .section--where-is .inner{
   /* 위쪽 여백 추가 */
   padding-top: 80px;
@@ -621,3 +645,56 @@ header .sub-menu li a:hover {
 
    border-left: 1px solid #e5e5e5;
 }
+
+/* FOOTER */
+footer {
+
+}
+
+footer .inner {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+}
+
+footer .site-links{
+  display: flex;
+}
+
+footer .site-links li {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #767676;
+}
+
+footer .site-links li a{
+  color: #4078c0;
+}
+
+footer .site-links li a:hover {
+  /* 밑줄 삽입 */
+  text-decoration: underline;
+}
+
+footer .logo {
+  position: absolute;
+
+  /* 가운데 배치 */
+    /* 전체 영역 다 사용하는 개념 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    /* 가운데 */
+  margin: auto;
+    /* 요소 크기 설정 */
+  width: 24px;
+  height: 24px;
+}
+
+footer .logo:hover svg{
+    fill: #4078c0;
+
+}
+
+
+
