@@ -1,6 +1,6 @@
 /* MEDIA */
   /* all이고 가로 너비가 1024px 이하 일때 */
-  header .section .inner {
+  header.section .inner {
     /* .section .inner의 max-width 초기화 */
     max-width: none;
 
