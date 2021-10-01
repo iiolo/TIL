@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// 페이지에서 id가 root(public 폴더에서 index.html 안에서 div element)인 것을 찾아서 react App을 그 안에다가 넣겠다를 의미
 ReactDOM.render(
   <React.StrictMode>
     <App />
