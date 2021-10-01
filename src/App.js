@@ -1,5 +1,6 @@
 import React from 'react';
-import Counter from './Counter';
+import inputSample from './inputSample';
+// import Counter from './Counter';
 // import Hello from './Hello';
 // import './App.css';
 // import Wrapper from "./Wrapper";
@@ -7,7 +8,9 @@ import Counter from './Counter';
 
 function App() {
   return (
-    <Counter />
+    // <Counter />
+
+    <inputSample />
   )
 }
 
