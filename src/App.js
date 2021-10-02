@@ -1,5 +1,5 @@
 import React from 'react';
-import inputSample from './inputSample';
+import InputSample from './inputSample';
 // import Counter from './Counter';
 // import Hello from './Hello';
 // import './App.css';
@@ -8,9 +8,9 @@ import inputSample from './inputSample';
 
 function App() {
   return (
-    // <Counter />
+   <InputSample/>
 
-    <inputSample />
+
   )
 }
 
