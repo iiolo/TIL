@@ -1,6 +1,50 @@
-import React from "react";
-import styled from "styled-components";
+import React, {useState, useEffect} from "react";
+import styled, {keyframes, css} from "styled-components";
 import Button from "./Button";
+
+// 서서히 나타나는 효과
+const fadeIn = keyframes`
+    /* 시작 */
+  from {
+    opacity: 0
+  }
+
+  /* 끝 */
+  to {
+    opacity: 1
+  }
+`;
+
+const fadeOut = keyframes`
+    /* 시작 */
+  from {
+    opacity: 1
+  }
+
+  /* 끝 */
+  to {
+    opacity: 0
+  }
+`;
+
+// 아래에서 위로 올라오는 효과
+const slideUp = keyframes`
+  from {
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+`;
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(200px);
+  }
+`;
 
 const DarkBackground = styled.div`
   position: fixed;
@@ -12,6 +56,15 @@ const DarkBackground = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.8);
+
+  animation-duration: 0.25s;
+  animation-timing-function:ease-out;
+  animation-name:${fadeIn};
+  animation-fill-mode:forwards;
+
+  ${props => props.disappear && css`
+    animation-name:${fadeOut};
+  `}
 `;
 
 
@@ -28,6 +81,15 @@ const DialogBlock = styled.div`
   p {
     font-size: 1.125rem;
   }
+
+  animation-duration: 0.25s;
+  animation-timing-function:ease-out;
+  animation-name:${slideUp};
+  animation-fill-mode:forwards;
+
+  ${props => props.disappear && css`
+    animation-name:${slideDown};
+  `}
 `;
 
 const ButtonGroup = styled.div`
@@ -54,11 +116,27 @@ function Dialog({
     onConfirm,
     onCancel
 }) {
-    if(!visible) return null;
+
+    // animate : 현재 애니메이션 보여주는 중
+    const[animate, setAnimate] = useState(false);
+
+    // localVisible : dialog 자체적으로 관리하는 visible 값, true에서 false로 전환되는 시점만을 캐치하기위해 만든 것
+    const [localVisible, setLocalVisible] = useState(visible);
+
+    useEffect(() => {
+        // visible 값이 true -> false 
+        if (localVisible && !visible) {
+          setAnimate(true);
+          setTimeout(() => setAnimate(false), 250); // 0.25초 뒤에 animate 값을 false로 설정
+        }
+        setLocalVisible(visible);//실제 props로 받아온 visible 값이 바뀔 때마다 localVisible 값도 동기화
+    }, [localVisible, visible]);
+    
+    if(!localVisible && !animate) return null;
 
     return (
-        <DarkBackground>
-          <DialogBlock>
+        <DarkBackground disappear={!visible}>
+          <DialogBlock disappear={!visible}>
             <h3>{title}</h3>
             <p>{children}</p>
             <ButtonGroup>
