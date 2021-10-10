@@ -31,23 +31,48 @@ const DialogBlock = styled.div`
 `;
 
 const ButtonGroup = styled.div`
+/* 여백 및 정렬 */
   margin-top: 3rem;
   display: flex;
   justify-content: flex-end;
 `;
 
+// 우리가 만든 Button 컴포넌트 상속받음
 const ShortMarginButton = styled(Button)`
   & + & {
+    margin-top: 0rem;
     margin-left: 0.5rem;
   }
 `;
 
-function Dialog() {
+function Dialog({
+    title,
+    children,
+    confirmText,
+    cancelText,
+    visible,
+    onConfirm,
+    onCancel
+}) {
+    if(!visible) return null;
+
     return (
-        <div>
-            
-        </div>
-    );
+        <DarkBackground>
+          <DialogBlock>
+            <h3>{title}</h3>
+            <p>{children}</p>
+            <ButtonGroup>
+              <ShortMarginButton color="gray" onClick={onCancel}>{cancelText}</ShortMarginButton>
+              <ShortMarginButton color="pink" onClick={onConfirm}>{confirmText}</ShortMarginButton>
+            </ButtonGroup>
+          </DialogBlock>
+        </DarkBackground>
+      );
 }
+
+Dialog.defaultProps = {
+    confirmText: '확인',
+    cancelText: '취소'
+};
 
 export default Dialog;

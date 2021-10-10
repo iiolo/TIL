@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled/*, {css}*/ , {ThemeProvider} from "styled-components";
 import Button from "./components/Button";
+import Dialog from "./components/Dialog";
 
 // Circle이라는 styled-component 생성
 // const Circle = styled.div`
@@ -37,31 +38,44 @@ const palette = {
   pink : '#f06595'
 }
 function App() {
+  const[dialog, setDialog] =useState(false);
+  const onClick = () => {
+    setDialog(true);
+  };
+
+  const onConfirm = () => {
+    setDialog(false);
+  };
+
+  const onCancel = () => {
+    setDialog(false);
+  }
+
   return (
     // <Circle color="blue" huge />
     <ThemeProvider
       theme = {{
         palette
       }}>
-      <AppBlock>
-         <ButtonGroup>
-          <Button color = 'pink' size = 'large'>BUTTON</Button>
-          <Button>BUTTON</Button>
-          <Button size = 'small'color = 'gray'>BUTTON</Button>
-        </ButtonGroup>
+        {/* ThemeProvider 내부에는 하나의 컴포넌트만 있어야 함 그래서 fragment 생성*/}
+        <>
+          <AppBlock>
+            <Button color='pink' size='large' onClick={onClick}>삭제</Button>
+          </AppBlock>
 
-        <ButtonGroup>
-          <Button color = 'pink' size = 'large' outline>BUTTON</Button>
-          <Button outline>BUTTON</Button>
-          <Button size = 'small'color = 'gray' outline>BUTTON</Button>
-        </ButtonGroup>
-
-        <ButtonGroup>
-          <Button size = 'large' fullWidth>BUTTON</Button>
-          <Button size = 'large' color = 'gray' fullWidth>BUTTON</Button>
-          <Button color = 'pink' size = 'large' fullWidth>BUTTON</Button>
-        </ButtonGroup>
-      </AppBlock>
+          <Dialog
+            title="정말로 삭제하시겠습니까?"
+            confirmText="삭제"
+            cancelText="취소"
+            onConfirm={onConfirm}
+            onCancel={onCancel}
+            visible = {dialog}
+          >
+            데이터를 정말로 삭제하시겠습니까?
+          </Dialog>
+            
+          
+      </>
     </ThemeProvider>
   );
 }
