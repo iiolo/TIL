@@ -1,9 +1,21 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Noto Sans KR", sans-serif;
 }
+
+/* COMMON */
+input {
+    border: none;
+}
+
+input::before {
+    border: 2px  solid #83bdff;
+    border-radius: 5px;
+}
+
 
 .main-container {
     width: 100%;
@@ -15,7 +27,7 @@
 }
 
 .form-signin {
-    width: 30%;
+    width: 300px;
     height: 200px;
     border: 2px solid gray;
     border-radius: 10px;
@@ -29,14 +41,18 @@
     font-weight: bold;
 }
 
-.id-container {
-    margin-top: 10px;
-    width: 80%;
+
+
+.form-signin input.underline{
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 20px;
 }
 
-.pwd-container {
-    margin-top: 10px;
-    width: 80%;
+.input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .btn-login {
