@@ -65,7 +65,7 @@ selector {
   - flex
 - flex-direction
 - flex-wrap
-- flex-flow : flex-direction flex-wrap의 단축 속성
+- flex-flow : flex-direction flex-wrap값들을 인자로 받는 단축 속성
 - justify-content : 중심축에서 아이템들 어떻게 배치하는 지 정함
   - flex-start/center/end : 아이템 순서를 유지하되 배치를 왼쪽 가운데 오른쪽(flex-) 지정해서 배치 가능
   - space-around : 박스 별 spacing 넣어줌
