@@ -1,6 +1,6 @@
 ## short cut key
 
-- commad palette 명령 팔레트 이용(ctrl + shift + p)
+- command palette 명령 팔레트 이용(ctrl + shift + p)
   - 축약어로 입력해도 찾을 수 있음
 - 자주 사용하는 것은 외우는 것이 좋음
 
