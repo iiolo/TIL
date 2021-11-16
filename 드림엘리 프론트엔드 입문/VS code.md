@@ -45,3 +45,13 @@
   - {text} : content에 텍스트 입력 가능
   - $ : 순서에 맞게 숫자 할당
   - lorem숫자 : 숫자에 맞는 단어 수 대로 더미용 텍스트 생성
+
+## 코멘트 색상 변경 방법
+
+- setting(설정) 창 > .json > edit in settings json(settings json에서 편집) 클릭 > setting을 세부적으로 텍스트로 할 수 있는 창이 나옴
+  ```json
+  "editor.tokenColorCustomizations": {
+          "comments" : "#ffc2c2"
+      }
+  ```
+  위 코드 입력
