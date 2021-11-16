@@ -39,6 +39,7 @@ heading
 
 ## 태그
 
+- 의미가 있는 symantic 태그 사용하기
 - element(node): <태그 명 attribute>contents</태그명>
 
 ### Box
