@@ -1,0 +1,119 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49466;
+}
+
+/* margin 대신 padding을 넣는 이유: 클릭 시 조금 더 클릭할 때 많은 영역을 활용하기 위해서 */
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*수직*/
+    padding: 8px 12px;
+    
+    
+}
+
+.navbar__logo {
+    font-size : 24px;
+    color: var(--text-color);
+
+}
+.navbar__logo i {
+    color : var(--accent-color);
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li{
+    padding: 8px 12px;
+
+}
+
+.navbar__menu li:hover {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.navbar__icons {
+   list-style: none;
+   color: var(--text-color);
+   display: flex;
+   padding-left: 0;
+
+
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+    display: none;
+    padding:0;
+    position: absolute;/*흐름에서 벗어나서 위치*/
+    right: 32px;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+@media screen and (max-width : 768px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+        height: auto;
+    }
+    
+    .navbar__logo {
+        padding: 10px 0;
+
+
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .navbar__menu li{
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__toogleBtn {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+    
+}
+
