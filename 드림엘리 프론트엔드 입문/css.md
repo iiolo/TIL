@@ -112,6 +112,19 @@ selector {
 
 ---
 
+## 변수 할당
+
+```css
+:root {
+  변수: 값;
+  --text-color: 색상코드;
+  --background-color: 색상코드;
+  --accent-color: 색상코드;
+}
+```
+
+## 그리고서 css 값 적을 때 var(변수이름)로 적으면 root에 있는 변수 값만 바꾸면 그 변수로 할당된 모든 css 값이 바뀜
+
 ## 팁
 
 - 새로운 기능을 쓸 때는 mdn, can i use 등의 사이트에서 브라우저 호환성 확인
