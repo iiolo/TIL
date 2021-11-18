@@ -125,6 +125,84 @@ selector {
 
 - 그리고서 css 값 적을 때 var(변수이름)로 적으면 root에 있는 변수 값만 바꾸면 그 변수로 할당된 모든 css 값이 바뀜
 
+---
+
+## CSS Units
+
+- 절대적인 단위의 경우 px을 많이 사용하고 상대적인 단위에서는 %, viewport와 관련된 단위, em, rem 주로 사용
+
+### Absolute length units 절대적인 단위
+
+| Unit | Name               | Equivalent to       |
+| ---- | ------------------ | ------------------- |
+| cm   | Centimeters        | 1cm = 96px/2.54     |
+| mm   | Millimeters        | 1mm = 1/10th of 1cm |
+| Q    | Quarter-milimeters | 1Q = 1/40th of 1cm  |
+| in   | Inches             | 1in = 2.54cm = 96px |
+| pc   | Picas              | 1pc = 1/6th of 1in  |
+| pt   | Points             | 1pt = 1/72th of 1in |
+| px   | Pixels             | 1px = 1/96th of 1in |
+
+- px을 제외한 것들은 물리적인 세상에서만 의미 있음, css 주된 용도는 모니터 위에서 웹사이트를 꾸며줄 때 쓰이므로 대부분의 경우 px을 이용해서 쓰고 나머지 단위는 잘 쓰지 않음
+- px : 모니터 위에서 화면에 나타날 수 있는 가장 작은 단위, absolute unit 중 가장 많이 쓰임
+  - 발생할 수 있는 문제점 : 컨테이너 사이즈가 변경되어도 컨텐츠가 그대로 고정된 값으로 유지됨, 폰트 사이즈를 px로 쓰게 될 경우 사용자가 브라우저에서 폰트 사이즈 설정을 바꿔도 전혀 반응하지 않음, 그래서 거의 px보다는 %를 활용(컨텐츠 유동적 변화)
+
+### Relative length units 상대적인 단위
+
+- Responsive Units 반응형 단위
+  Unit|Relative to|example
+  ---|---|---
+  em|relative to parent element, 타이포그래피에서 현재 지정된 포인트 사이즈를 나타내는 단위, 지금 폰트 사이즈를 나타내는 단위, 같은 폰트 사이즈라도 폰트 패밀리에 따라서 사용자에게 보여지는 텍스트의 크기는 달라질 수 있다. em은 선택된 폰트패밀리와 상관 없이 항상 고정된 폰트 사이즈를 가지고 있다. 부모의 폰트 사이즈에 상대적으로 곱해서 계산되어짐 |기본 브라우저 폰트 사이즈 16px일때 8em을 가진 parent 요소가 있을 경우 parent요소의 크기는 16 \* 8 = 128px, 그 자식 요소 child는 0.5em을 가졌다면 128px \* 0.5 = 64px의 크기를 갖게된다.  
+  rem|relative to root element , em과 비슷하지만 부모에 따라서 사이즈가 계산되는 것이 아닌 root에 지정된 폰트 사이즈에 따라서 크기가 결정됨(root요소에 상대적으로 크기 결정), 최고의 root인 사이즈에 따라 곱해져 결정됨|기본 브라우저 폰트 사이즈 16px일때 8em을 가진 parent 요소가 있을 경우 parent요소의 크기는 16 \* 8 = 128px, 그 자식 요소 child는 0.5em을 가졌다면 16px \* 0.5 = 8px의 크기를 갖게된다.
+  ex|em과 달리 지정된 폰트 사이즈에 따라서 높이가 변경될 수 있다.
+  ch|적용된 폰트패밀리에서 숫자 0의 너비를 나타내는 단위]
+  lh|line height of the element, 브라우저 지원 안됨
+  vw|viewport width|100vw의 경우 viewport width의 100% 사용, 50vw는 viewport width 반 사용
+  vh|viewport height
+  vmin|viewport width와 viewport height 중 작은 값| 50vmin의 경우 viewport width와 viewport height 중 더 작은 값의 50% 적용
+  vmax|viewport width와 viewport height 중 큰 값|50vmax의 경우 viewport width와 viewport height 중 더 큰 값의 50% 적용
+  % | 부모요소에 맞게 상대적으로 크기가 계산되어짐, em대신에 % 사용 가능|
+
+### em과 rem의 차이점
+
+- 박스 컨테이너 자체 사이즈를 지정할 때는 em과 rem은 반응형 단위이긴 하지만 폰트 사이즈에 비례해서 변화하는 단위이기 때문에 결국 이 아이들도 고정적인 값을 갖게된다. 그래서 컨텐츠를 조금 더 물과 같은 유동적이게 만들기 위해서는 %를 이용하는 것이 좋다.
+- em과 rem은 어떤 것이 더 낫다고 할 수 없다.
+- 어떤 디자인이냐에 따라서 혹은 원하는 기능에 따라서 em / rem 적절하게 사용됨
+- em
+  - component가 어디에 사용되느냐에 따라서, 즉 부모요소에 따라서 사이즈가 유동적으로 변동되길 원한다면 em 이용
+  - em을 많이 사용하게 되면(복잡한 구조 안에 있을 시) 폰트 사이즈를 즉각적으로 계산하기 어려움. 직관적을 폰트사이즈가 계산이 되지 않기 때문에 em을 많이 사용하게 되면 계산하는 데 어려움이 있을 수 있다.
+  - font size 변경에 따라서 발생할 수 있는 padding 등은 em 사용, font-size에 따라서 padding 등도 변화했으면 해서 em 사용
+- rem
+
+  - component가 사이트 어디에 사용되든 사이즈가 고정되길 원한다면 rem 이용
+  - 폰트사이즈 결정시 em보다는 rem을 더 선호하는 편
+  - 어떤 component에 사용되느냐에 상관없이 동일한 사이즈를 유지하고 싶을 때 사용
+
+- padding도 font size에 따라 변경되어야 하는 경우 padding 값으로 px보다는 em 단위 활용한다면 font size가 변경될 때마다 padding이 그에 맞게 변화할 수 있다.
+  - padding에 em 적용시 기존의 컨텐츠에 적용된 폰트사이즈의 숫자 배(곱하기)가 된다.
+  - 미디어쿼리로 스크린 사이즈에따라 폰트사이즈 변경되어도 이 폰트사이즈에 맞게 padding 사이즈 변화되서 조금 더 반응형으로 컴포넌트 component 제작 가능
+  - 요소마다 사이즈에 상관없이 고정적인 padding을 유지해야 한다면 rem 사용
+  - em과 rem 섞어서 사용할 수 있음 ex) 위아래는 폰트사이즈에 맞게 padding 조정되게 만들고, 양쪽(왼쪽과 오른쪽)은 현재 폰트 사이즈와 상관없이 고정되게 만들기(수직 정렬됨) -> padding: 숫자em, 숫자rem
+- 미디어 쿼리 스크린 사이즈 지정시 rem을 사용해서 하면 더 좋음
+
+### 사용하는 목적에 따른 단위
+
+#### 부모요소 / 브라우저 사이즈에 따른 변경
+
+1. 부모요소의 사이즈에 따라 사이즈가 변경되어야 하는 경우 : %, em
+1. 부모와는 상관없이 브라우저 사이즈에 대해 반응해야 하는 경우 : viewport 관련 단위(vw, vh, vmin, vmax), rem
+
+#### 요소 /font 사이즈에 따른 변경
+
+1. 요소(ex) box) 자체의 너비와 높이에 따라 사이즈 변경 : %, viewport 관련 단위(vw, vh, vmin, vmax), flex box 등 이용해서 유동적으로 설정
+2. font 사이즈에 따라서 사이즈 변경 : em, rem
+
+### 사이즈 계산 사이트
+
+- PXtoEM : http://pxtoem.com/
+
+---
+
 ## 팁
 
 - 새로운 기능을 쓸 때는 mdn, can i use 등의 사이트에서 브라우저 호환성 확인
