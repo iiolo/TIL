@@ -81,7 +81,7 @@
 
 - ctrl + Home / ctrl + End : 현재 파일 젤 윗부분으로 이동 / 현재 파일 젤 아랫부분으로 이동
 - 문장에서 Home / End : 문장의 젤 앞부분으로 이동 / 문장 젤 끝부분으로 이동
-- 문장에서 ctrl + shift + Home / end: 현재 문장 선택
+- 문장에서 shift + Home / end: 현재 문장 선택
 - ctrl + <- /-> : move word, 단어별 이동
 - 해당하는 곳에 가서 ctrl + shift + <- /-> : select word, 한 단어가 선택됨
 - 문장에 가서 ctrl + c : 해당 문장 전체 복사
