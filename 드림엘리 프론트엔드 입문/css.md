@@ -207,3 +207,7 @@ selector {
 
 - 새로운 기능을 쓸 때는 mdn, can i use 등의 사이트에서 브라우저 호환성 확인
 - % 단위 : 부모 기준 단위 / vh 단위 : 부모와 상관없이 뷰포트 기준 단위
+- 색상 선택시 google extension으로 Color Picker 사용하면 좋다(브라우저 색상 찍어서 가져올 수 있음)
+- Sass/Less 사용시 묶어서 css 작성하게 되어 작성되어야 하는 코드의 양을 줄일 수 있어 쓰기 편함, react 사용시 PostCSS 함께 써서 css를 모듈화해서 사용함
+  - 순수 css 연습 후 넘어가기
+- root로 지정한 변수 값은 calc(var(변수)과 수식) 함수 사용해서 조정 가능
