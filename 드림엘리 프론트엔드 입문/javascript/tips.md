@@ -33,3 +33,9 @@
 - ecma-international.org : 문법에 관해 잘 정의되어 있으나 개발자가 보기 불편
 - https://developer.mozilla.org/ko/ : 개발자들이 많이 사용하는 공식사이트, 여기서 공부하는 것을 추천
 - https://www.w3schools.com/ : 공식사이트는 아니여서 mdn과 둘이 비교시 mdn이 훨씬 더 설명이 많고 최신 정보도 빨리 올라옴
+
+## ES6
+
+- major browser의 경우 모두 es6 버전 사용
+- internet explorer에서는 적용x
+- 해당 브라우저가 es6 지원 안해도 babel을 이용해서 es6이상으로 개발하고 최종적으로 배포할 때는 es5나 es4로 내려서 개발하면 된다.
