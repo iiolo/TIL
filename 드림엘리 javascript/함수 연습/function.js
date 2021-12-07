@@ -170,3 +170,33 @@ const simpleMultiply = (a, b) => {
 (function hello() {
     console.log('IIFE');
 })();
+
+// Quiz
+// command에 따른 계산하는 함수 구하기
+// function calculate(command, a, b)
+// command : add, substract, divide, multiply, remainder
+
+//answer
+function calculate(command, a, b) {
+    switch (command) {
+        case 'add':
+            console.log(a+b);
+            break;
+        case 'substract' :
+            console.log(a-b);
+            break;
+        case 'divide' :
+            console.log(a/b);
+            break;
+        case 'multiply' :
+            console.log(a*b);
+            break;
+        case 'remainder' :
+            console.log(a%b);
+            break;
+        default:
+            break;
+    }
+}
+
+calculate('remainder', 3,2);
