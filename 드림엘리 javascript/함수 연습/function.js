@@ -180,23 +180,17 @@ const simpleMultiply = (a, b) => {
 function calculate(command, a, b) {
     switch (command) {
         case 'add':
-            console.log(a+b);
-            break;
+            return a+b;
         case 'substract' :
-            console.log(a-b);
-            break;
+            return a-b;
         case 'divide' :
-            console.log(a/b);
-            break;
+            return a/b;
         case 'multiply' :
-            console.log(a*b);
-            break;
+            return a*b;
         case 'remainder' :
-            console.log(a%b);
-            break;
+            return a%b;
         default:
-            break;
+            throw Error('unknown command');
     }
 }
-
-calculate('remainder', 3,2);
+console.log(calculate('add', 3,2));
