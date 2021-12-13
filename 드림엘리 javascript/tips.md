@@ -39,3 +39,8 @@
 - major browser의 경우 모두 es6 버전 사용
 - internet explorer에서는 적용x
 - 해당 브라우저가 es6 지원 안해도 babel을 이용해서 es6이상으로 개발하고 최종적으로 배포할 때는 es5나 es4로 내려서 개발하면 된다.
+
+## ETC
+
+- console.clear() : 콘솔창에 써 있던 이전 것들 다 지울 수 있음
+- 새로운 함수나 api 사용시 어떤 parameter을 사용해서 어떤 값이 return 되는지 확인하고 사용해야 한다. : ctrl 누르고 해당 함수나 api 클릭 or MDN 사이트 이용
