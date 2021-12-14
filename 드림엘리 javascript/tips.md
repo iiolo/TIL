@@ -43,4 +43,4 @@
 ## ETC
 
 - console.clear() : 콘솔창에 써 있던 이전 것들 다 지울 수 있음
-- 새로운 함수나 api 사용시 어떤 parameter을 사용해서 어떤 값이 return 되는지 확인하고 사용해야 한다. : ctrl 누르고 해당 함수나 api 클릭 or MDN 사이트 이용
+- 새로운 함수나 api 사용시 어떤 parameter을 사용해서 어떤 값이 return 되는지 확인하고 사용해야 한다. : ctrl 누르고 해당 함수나 api 클릭 or MDN 사이트 이용 하는 습관 들이기
