@@ -89,3 +89,20 @@ console.log(fruits);
 console.log(fruits.indexOf('🍎'));
 console.log(fruits.lastIndexOf('🍎'));
 
+// 연습
+console.clear();
+const newArray = [5,7,8,9]
+console.log(newArray);
+const news = newArray.toString();
+console.log(news);
+newArray.push(10);
+newArray.pop();
+const news2 = newArray.toLocaleString();
+console.log(news2);
+
+const arrLen = newArray.length;
+console.log(arrLen);
+
+newArray.join(9);
+console.log(newArray);
+
