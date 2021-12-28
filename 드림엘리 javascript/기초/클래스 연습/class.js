@@ -28,7 +28,8 @@ function alertNum(num) {
     alert(`alert! ${num}`);
 }
 
-const coolCounter = new Counter(alertNum);
+const printCounter = new Counter(printSomething);
+const alertCounter = new Counter(alertNum);
 
 coolCounter.increase();
 coolCounter.increase();
