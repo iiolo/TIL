@@ -1,4 +1,4 @@
-package exam03;
+package lotto;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Random;
 
-public class TCPServer {
+public class LottoTCPServer {
 
 	public static void main(String[] args) {
 		Random r = new Random();
@@ -25,12 +25,12 @@ public class TCPServer {
 				OutputStream os = socket.getOutputStream();
 
 				// 6. 클라이언트와 데이터 주고 받음
-				// 연결한 클라이언트한테 정수 난수 10개를 만들어 보내주도록 함
-				for (int i = 1; i <= 10; i++) {
+				// 연결한 클라이언트한테 정수 난수 6개를 만들어 보내주도록 함
+				for (int i = 1; i <= 6; i++) {
 					// 0에서 100 사이의 난수
-					int n = r.nextInt(100);
+					int n = r.nextInt(45);
 
-					System.out.println("서버에서 난수를 만들었습니다. : " + n);
+					System.out.println("서버에서 로또 번호를 만들었습니다. : " + n);
 					Thread.sleep(200);// 0.2초의 대기 시간
 					
 					// 만들어진 난수를 클라이언트에게 보냄
