@@ -1,0 +1,202 @@
+select e.ename, m.ename manager,e.hiredate ehiredate,m.hiredate mhiredate,e.dno,dname
+from emp e, emp m, dept d
+ where d.dno = e.dno and e.mgr = m.eno
+and e.hiredate < m.hiredate;
+
+create table Newbook(
+ bookid number not null,
+ bookname varchar2(20) not null,
+ publisher varchar2(20) null,
+ price number null
+);
+
+create table Newbook(
+ bookid number unique,
+ bookname varchar2(20) not null,
+ publisher varchar2(20),
+ price number
+);
+
+create table Newbook(
+ bookid number primary key,
+ bookname varchar2(20),
+ publisher varchar2(20),
+ price number
+);
+
+create table Newbook(
+ bookid number,
+ bookname varchar2(20),
+ publisher varchar2(20),
+ price number,
+ primary key(bookid)
+);
+
+create table Newbook(
+ bookid number primary key,
+ bookname varchar2(20) not null,
+ publisher varchar2(20) default '쌍용미디어',
+ price number
+);
+
+create table Newbook(
+ bookid number primary key,
+ bookname varchar2(20) not null,
+ publisher varchar2(20) default '쌍용미디어',
+ price number default 10000 check(price >= 1000)
+);
+create table member(
+ no number primary key,
+ name varchar2(20) not null,
+ addr varchar2(20) default '서울',
+ phone varchar2(20) unique,
+ age number check(age>=20)
+);
+
+create table member(
+ id varchar2(20) primary key,
+ pwd varchar2(20),
+ name varchar2(20)
+);
+
+create table member(
+ id varchar2(20),
+ pwd varchar2(20),
+ name varchar2(20),
+ primary key(id)
+);
+
+create table board(
+ no number primary key,
+ title varchar2(50),
+ id varchar2(20) references member(id),
+ content varchar2(3000)
+);
+create table board(
+ no number,
+ title varchar2(50),
+ id varchar2(20),
+ content varchar2(3000),
+ primary key(no),
+ foreign key(id) references member(id)
+);
+
+
+insert into member values(1,'홍길동',default,'010-1111-1111',30);
+insert into member values(2,'홍길숙',default,'010-1111-2222',10);
+insert into member values(1,'김소윤',default,'010-1111-2222',19);
+insert into member values(1,'김소윤',default,'010-1111-2222',20);
+insert into Newbook values(1,'즐거운자바', '쌍용미디어', 30000);
+insert into Newbook values(2,'즐거운오라클', null, null);
+insert into Newbook values(null,null, null, null);
+insert into Newbook values(4,null, null, null);
+
+insert into Newbook(bookid, bookname) values(3,'신나는자바');
+insert into Newbook(bookid) values(3,'신나는자바');
+
+insert into Newbook values(1,'재미있는 자바', null, null);
+insert into Newbook values(1,'재미있는 자바', default, null);
+insert into Newbook values(1,'재미있는 자바', default, default);
+insert into Newbook values(1,'재미있는오라클', null, null);
+insert into Newbook values(null,'재미있는 자바', null, null);
+
+insert into Newbook values(1,'즐거운 자바', null, null);
+insert into Newbook values(2,'즐거운 자바', '한빛미디어', 20000);
+insert into Newbook values(3,'신나는 자바', '한빛미디어', 500);
+insert into Newbook values(1,'즐거운 오라클', null, null);
+insert into Newbook values(null,'즐거운 오라클', null, null);
+
+insert into member values('tiger','1234', '김범');
+insert into member values('lion','1234', '홍사자');
+
+insert into member values('kim','1234', '김유신');
+insert into member values('lee','1234', '이유신');
+insert into member values('kim','1111', '김철수');
+insert into member values(null,'1111', '김철수');
+
+
+insert into board values(1,'안녕', 'tiger','안녕');
+insert into board values(2,'금요일', 'lion','즐거운 금요일 입니다.');
+insert into board values(3,'점심', 'kim','점심 뭐 먹을 까요?');
+insert into board values(2,'금요일', 'lion','즐거운 금요일 입니다.');
+insert into board values(1,'test', 'kim','테스트 입니다.');
+insert into board values(1,'test', 'lee','테스트 입니다.');
+insert into board values(2,'test', 'lee','테스트 입니다.');
+insert into board values(3,'test', 'hong','테스트 입니다.');
+
+create table orderDetail(
+orderno number,
+bookid number,
+qty number,
+primary key(orderno, bookid)
+);
+
+
+insert into orderDetail values(1,1,10);
+insert into orderDetail values(1,2,5);
+insert into orderDetail values(2,1,1);
+insert into orderDetail values(1,1,20);
+
+
+create table cust(
+	cno number primary key,
+	cname varchar2(20),
+	caddr varchar2(20)
+);
+
+create table theator(
+	tno number primary key,
+	tname varchar2(50),
+	taddr varchar2(20)
+);
+
+create table play(
+	tno number references theator(tno),
+	pno number check(pno between 1 and 10),
+	title varchar2(100),
+	price number check (price<=20000),
+	seats number,
+	primary key(tno, pno)
+);
+
+create table reservation(
+	tno number,
+	pno number,
+	cno number,
+	seat number,
+	rdate date,
+	primary key(tno,pno,cno),
+	foreign key(tno,pno) references play(tno,pno),
+	foreign key(cno) references cust(cno)
+);
+
+고객명을 입력받아 그 고객의 예약정보를 출력하는 웹문서 작성
+
+ insert into cust values(3,'홍길동','강남');
+ insert into cust values(4,'김철수','잠실');
+ insert into cust values(9,'박영희','강남');
+ 
+ insert into theator values(1,'롯데','잠실');
+ insert into theator values(2,'메가','강남');
+ insert into theator values(3,'대한','잠실');
+ 
+ insert into play values(1,1,'어려운 영화',15000,48);
+ insert into play values(3,1,'멋진 영화',7500,120);
+ insert into play values(3,2,'재밌는 영화',6000,110);
+ 
+ insert into reservation values(3,2,3,15,'2014-09-01');
+ insert into reservation values(3,1,4,16,'2014-09-01');
+ insert into reservation values(1,1,9,48,'2014-09-01');
+ 
+ 
+select * from reservation
+where cno = (select cno from cust
+where cname = '이름')
+
+
+
+
+
+
+
+
