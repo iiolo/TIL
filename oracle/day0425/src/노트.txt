@@ -1,0 +1,59 @@
+create table book(
+bookid number primary key,
+bookname varchar2(50),
+publisher varchar2(20),
+price number
+);
+create table newbook(
+bookid number primary key,
+bookname varchar2(50),
+publisher varchar2(20),
+price number
+);
+
+insert into book values(1,'재미있는 자바', '쌍용', 3000);
+insert into book values(3,'즐거운 오라클', null, null);
+insert into book values(bookid, bookname) values(4,'신나는 오라클');
+insert into book(bookname, publisher, price, bookid) values('즐거운 자바', '한빛', 40000,2);
+
+insert into newbook(bookname, publisher, price, bookid) select bookname, publisher, price, bookid from book;
+
+update customer set address = '대한민국 부산' where custid = 5;
+
+from customer c, orders o, book b
+where c.custid = o.custid
+and b.bookid = o.bookid
+and name = '박지성';
+
+select distinct name from customer c, orders o, book b
+where c.custid = o.custid
+and b.bookid = o.bookid
+and publisher in (select distinct publisher
+from customer c, orders o, book b
+where c.custid = o.custid
+and b.bookid = o.bookid
+ and name = '박지성') and name <>'박지성';
+ 
+select name,count(distinct publisher) 
+from customer c, orders o, book b
+where c.custid = o.custid
+and b.bookid = o.bookid
+group by name
+having count(distinct publisher) >= 2;
+
+select bookname, count(*) 
+from customer c, orders o, book b
+where c.custid = o.custid
+and b.bookid = o.bookid
+group by bookname
+having count(*) >= (select count(*)*0.3 from customer);
+
+insert into customer values(6,'tiger','대한민국 서울', '1111');
+insert into customer values(7,'Tiger','대한민국 광주', '2222');
+insert into customer values(8,'  tiger','대한민국 울산', '3333');
+insert into customer values(9,'TIGER  ','대한민국 전주', '4444');
+
+insert into customer values(10,'김훈','대한민국 서울', '5555');
+insert into customer values(11,'박민','대한민국 제주', '6666');
+
+도서번호와 가격을 입력받아 해당 도서의 가격을 수정하는 웹 문서 작성
