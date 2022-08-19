@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+</head>
+<body>
+  <div class="box"></div>
+  <style>
+    .box {
+    width: 100px;
+    height: 100px;
+    background:tomato;
+    margin: 50px;
+
+  /*   transition-property를 이용하여 가로 너비와 배경을 전환효과를 사용 */
+  /*   transition-property: width, background; */
+
+  /*   1초동안 그 전환효과 동작 */
+  /*   transition-duration:1s; */
+
+  /*   위 두 코드를 단축속성으로 작성시 */
+  /*   transition: width 1s, background 1s; */
+
+  /*   1. transition property */
+    /*transition: 1s;*//*transition: all 1s;과 동일*/
+
+  /*   가로너비만 속성 적용시 가로너비만 자연스럽게 변함 */
+  /*   transition : width 1s; */
+
+  /*   백그라운드만 자연스럽게 변경 */
+  /*   transition : background 1s; */
+
+  /*   2. transition-duration */
+  /*   miliseconds 적용 가능 */
+  /*    transition-duration:1000ms; */
+
+  /*   second 적용 가능 */
+    /*transition-duration: .4s;*//*0.4s*/
+
+  /*   3. transition-timing-function */
+  /*   ease 빠르다가 느리게*/
+  /*   transition-duration:2s; */
+  /*   transiton-timing-function: ease; */
+
+  /*   linear 일정하게*/
+  /*   transiton-timing-function: linear; */
+
+  /*   단축속성 적용시 */
+  /*   일정하게 */
+  /*   transition: 2s linear; */
+
+  /*   ease-in */
+  /*   느리게 출발해서 빠르게 */
+  /*   transition: 2s ease-out; */
+
+  /*   steps */
+  /*   2초에 걸쳐서 애니메이션 4번 쪼갬 */
+  /*   transition: 2s steps(4); */
+
+  /*   4. transiton-delay */
+  /*   3초 뒤에 변하고 변한 후 3초 뒤에 원상태로 돌아옴 */
+    transition: 2s 3s/*앞: duration 뒤:delay*/
+  }
+
+  /* 마우스 올렸을 때 변화 */
+  .box:hover{
+    width: 300px;
+    background: dodgerblue;
+
+  }
+  </style>
+  
+</body>
+</html>

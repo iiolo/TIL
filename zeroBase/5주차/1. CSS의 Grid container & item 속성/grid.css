@@ -1,0 +1,274 @@
+/* 1. display */
+/* .container { */
+/*   grid container 정의 */
+  /*   grid container로 정의된 클래스를 가진 부모요소 안에 속한 자식요소 item들은 정의를 하지 않아도 자연스럽게 grid container의 item으로 정의됨 */
+/*   display: grid; */
+  
+/*   container 전체가 왼쪽에서 오른쪽으로 정렬 */
+/*   display: inline-grid;
+  
+  width: 400px;
+  height: 300px;
+  border:4px solid lightgray;
+
+}
+
+.item {
+  border: 2px dashed red;
+} */
+
+/* 2. grid-template-rows, grid-template-columns */
+/* .container { */
+/*   grid-container 정의 */
+/*   display: grid; */
+  
+/*   행과 열 정의 */
+/*   100px 크기의 행 두개 만듦 */
+/*   grid-template-rows: 100px 100px; */
+/*   grid-template-rows: repeat(2, 100px); */
+  
+/*   200px 열 두개 만듦 */
+/*   grid-template-columns: 200px 200px; */
+  
+/*   container 전체 크기 1:1 비율로 열 두개 생성 */
+/*   grid-template-columns: 1fr 1fr; */
+  
+/*   container 전체 크기 2:1 비율로 열 두개 생성 */
+/*   grid-template-columns: 2fr 1fr; */
+  
+/*    container 전체 크기 1:1:1 비율로 열 세개 생성 */
+/*   grid-template-columns: 1fr 1fr 1fr;  */
+  
+/*   1fr 단위의 열 세개 만들어냄 즉 1:1:1 비율의 열 세개 */
+/*   grid-template-columns: repeat(3,1fr); */
+  
+/*   container 크기 가늠 */
+/*   border: 4px solid lightgray; */
+  
+/*   3. grid-row, grid-column */
+/*   container 가로 사이즈 줄이기 */
+/*   width: 600px; */
+  
+/*   100px 크기의 행 4개 만듦 */
+/*   grid-template-rows: repeat(4, 100px);
+  
+} */
+
+/* .item { */
+/*   border: 2px dashed red; */
+  
+  /*   3. grid-row, grid-column */
+/*   border: 10px solid red;
+  font-size: 30px;
+} */
+
+ /*   3. grid-row, grid-column */
+/* 특정 아이템을 container 안에서 배치 */
+/* .item:nth-child(1) { */
+  
+   /*   1번 item이 가로 1번 선부터 3번선까지 확장해서 차지 */
+/*   grid-row: 1/3; */
+  
+/*   1번 item이 세로 1번 선부터 2번선까지 차지 */
+/*   grid-column: 1/2; */
+  
+  /*   1번 item이 세로 1번 선부터 3번선까지 확장해서 차지 */
+/*   grid-column: 1/3;
+} */
+
+/* .item:nth-child(2){
+  grid-row: 1/3;
+} */
+
+/* .item:nth-child(4){
+  grid-row: 4/5; */
+  
+/*   아래 두 코드 동일 */
+/*   grid-column: 2/4; */
+/*   grid-column: -1/-3;
+} */
+
+/* 4. grid-template-areas 5. row-gap, column-gap */
+/* .container {
+  width: 600px;
+  display: grid;
+  grid-template-rows: repeat(3,100px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+    "header header header"
+    "main . aside"
+    ". footer footer"
+    ; */
+  
+/*   5. gap, row-gap, column-gap */
+/*   단축속성 */
+/*   gap: 30px 15px; */
+  
+/*   개별속성 */
+/*   row-gap:30px; */ 
+/*   column-gap:15px; */
+/* } */
+
+/* .item {
+  border: 10px solid red;
+  
+} */
+
+/*   영역이름 설정 */
+/* .item:nth-child(1){
+  grid-area:header;
+}
+
+.item:nth-child(2){
+  grid-area:main;
+}
+
+.item:nth-child(3){
+  grid-area:aside;
+}
+
+.item:nth-child(4){
+  grid-area:footer;
+} */
+
+/* 6. grid-auto-rows, grid-auto-columns */
+/* .container {
+  width: 600px;
+  display: grid; */
+  
+/*   2개의 행과 3개의 열에 6개 item 배치 */
+/*   grid-template-rows: repeat(2,100px);
+  grid-template-columns: repeat(3, 1fr); */
+  
+/*   암시적 행과 열 배치 */
+/*   모든 암시적 행(6번 item, 5번 item)의 높이는 100px */
+/*   grid-auto-rows: 100px; */
+  
+/*   명시적 열과 암시적 열이 1:1:1:1 비율로 동일한 크기로 됨 */
+/*   grid-auto-columns: 1fr;
+  
+} */
+
+/* .item {
+  border: 10px solid red;
+} */
+
+/* .item:nth-child(1){ */
+/*   item 6번이 명시적 행과 열에서 벗어나게됨 */
+/*   grid-column: 1/3;
+  
+} */
+
+/* .item:nth-child(2){
+  grid-column: 3/5;
+}
+ */
+/* .item:nth-child(3){ */
+/*   현재 칸이 위치된 곳에서부터 2개의 선만큼 열 확장, 2개의 칸 차지 */
+/*   grid-column: span 2;
+} */
+/* 
+.item:nth-child(4){
+  grid-row: 5/7;
+  grid-column: 6/7;
+} */
+
+/* 7. grid-auto-flow */
+/* .container {
+  width: 600px;
+  display: grid; */
+  
+/*   3개의 행과 3개의 열 생성 */
+/*   grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 1fr); */
+  
+/*   흐르는 방향을 행축 기준 정렬 */
+/*   grid-auto-flow: row; */
+  
+/*   흐르는 방향을 열축 기준 정렬 */
+/*   grid-auto-flow: column; */
+  
+/*  3번 4번 item이 각각 첫번째 행 1번 item의 빈공간, 두번째 행 2번 item  빈공간 메움 */
+/*   grid-auto-flow: row dense;/*dense와 동일 row 생략 가능*/
+  
+/* }  */
+
+/* .item {
+  border: 10px solid red;
+} */
+
+/* .item:nth-child(1) {
+  grid-column: span 2;
+} */
+
+/* .item:nth-child(2) { */
+/*   첫줄에서 이미 1번 item이 -2/-4를 차지하고 있어 -2/-3부분이 겹치게 되므로 2번 item은 줄바꿈 처리가 된다.*/
+/*   grid-column: -1/-3;
+} */
+
+/*  2-1 grid-template-rows, grid-template-columns line 이름 설정 */
+/* .container{
+  width: 600px;
+  display: grid; */
+/*   grid-template-rows: 100px 100px; */
+  
+/*   세로 두번째 선과 세번째 선 이름 설정 */
+/*   grid-template-columns: 1fr [center-start] 1fr [center-end] 1fr; */
+  
+/*   2번 item이 빈공간 채우게 하기 */
+/*   grid-auto-flow: dense; */
+  
+/*   repeat 함수 사용 */
+  /*grid-template-columns: repeat(2, 100px 200px);*//*100px 200px 100px 200px*/
+/* } */
+
+/* .item {
+  border: 10px solid red;
+} */
+
+/* .item:nth-child(1){
+  grid-column: center-start/center-end;
+} */
+
+/* 8. grid-template */
+.container{
+  display: grid;
+  
+/*   개별 속성 */
+/*   grid-template-rows: 80px 350px 130px;
+  grid-template-columns: 2fr 100px 1fr;
+  grid-template-areas: 
+    "header header header"
+    "main . aside"
+    "footer footer footer"
+    ; */
+  
+/*   단축속성 */
+  grid-template:
+    "header header header" 80px
+    "main . aside" 350px
+    "footer footer footer" 130px
+    / 2fr 100px 1fr;
+    
+}
+
+/* container 자식요소 모두 선택 */
+.container>*{
+  border: 10px solid red;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}

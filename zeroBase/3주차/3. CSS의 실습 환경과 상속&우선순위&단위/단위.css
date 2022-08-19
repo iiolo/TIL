@@ -1,0 +1,93 @@
+/*em, rem*/
+/*rem*/
+html {
+  font-size 10px;
+}
+/* body{
+  font-size:16px;
+  
+} */
+body *{
+  border : 2px solid;
+}
+.container {
+  width: 60em;
+  font-size 15px;
+  
+}
+.parent {
+  width: 30em;
+  font-size : 2em; 
+}
+.child {
+  width: 20rem;
+  font-size:2em;
+}
+
+/*em단위*/
+/* body *{
+  border : 2px solid;
+}
+
+.container {
+  width: 60em;
+  font-size 15px;
+  
+} */
+
+/* .parent {
+  width: 30em; */
+  /*font-size : 2em;*/ /*자기자신이 갖고있는 폰트 사이즈의 2배 그래서 20px*/
+/* } */
+
+/* .child {
+  width: 15em;
+  font-size:2em; */
+/* }  */
+
+/*vw,vh*/
+.box3 {
+  width: 50vw; /*viewport 가로 절반*/
+  height: 50vh;/*viewport 세로 절반*/
+  background: red;
+}
+
+/* vmin, vmax */
+.test {
+  width: 50vmin;
+  height: 300px;
+  background: red;
+}
+
+/* width, height */
+.box {
+  width : auto; /*100%*/
+  height: auto;/*0*/
+  background: tomato;
+}
+
+
+.span1 {
+  width: auto; /*0*/
+  height: auto;/*0*/
+  background: tomato;
+}
+
+/* max-width, min-width, max-height, min-height */
+.parent1 {
+  width: 200px;
+  height: 300px;
+  border: 4px solid tomato;
+  margin: 20px; /*여백*/
+}
+
+.child1 {
+  /*요소 크기에 제한선을 둘 수 있다.*/
+  max-width:400px; 
+  min-width:200px;
+  height: 200px;
+  background: orange;
+}
+
+
+

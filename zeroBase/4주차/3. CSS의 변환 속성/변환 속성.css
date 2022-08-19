@@ -1,0 +1,92 @@
+/* 1. transform origin */
+/* img {
+  width: 200px;
+  bordwer: 1px solid lightgray;
+   */
+/*   중간과정 보기 위함 */
+/*   transition: 1s; */
+  
+/*   45도 회전 */
+/*   transform: rotate(45deg); */
+  
+/*   transform-origin 기본값 */
+/*   transform-origin: 50% 50% 0; */
+
+  
+/*   왼쪽 상단에서 기준점 위치 */
+/*   transform-origin: 0% 0%; */
+  
+/*   우측 하단 기준점 위치 */
+/*   transform-origin: 100% 100%; */
+/*   transform-origin: right bottom; */
+/*   transform-origin: bottom right; */ 
+/* } */
+
+/* 2. transform-style 3. perspective  */
+/* .perspective { */
+/*   가로 너비 일치 */
+/*   width: 200px; */
+  
+/*   perspective 속성 (함수 아님)*/
+/*   perspective class를 가지고 있는 요소에서 500px의 원근 거리를 통해 원근감을 볼 수 있음 */
+/*   perspective : 500px; */
+  
+/*   원근감이 심해짐 */
+/*   perspective: 200px; */
+  
+/*   원근거리 멀어짐 */
+/*   perspective: 1000px;*/
+  
+/*   padding: 70px; */
+  
+/*   4.perspective origin */
+/*   perspective-origin: 0 50%; */
+/*   perspective-origin: 0 0; */
+/*   perspective-origin: 100% 100%; */
+/*   perspective-origin: 100% 200%; */
+/* }  */
+
+/* .grand-parent {
+    width: 200px;
+  border: 3px solid dodgerblue; */
+  
+/*   움직이는 거 확인 */
+/*   transition: 1s;
+
+  transform: rotateX(-45deg); */
+  
+/*   자식요소에서도 3차원 변환 사용하겠다 선언해줘서 parent에 있는 3차원 변환 적용됨 */
+/*   transform-style: preserve-3d; 
+}  */
+
+/* .parent{
+  width: 200px;
+  border: 3px solid tomato;
+  transition: 1s;
+  transform: rotateY(45deg); */
+  
+/*   img 태그 3차원 변환 효과 적용 허용 */
+/*   transform-style: preserve-3d;
+} */
+
+/* img{
+  width: 200px;
+  border: 3px solid lightgray;
+  transition: 1s;
+  transform: rotateX(45deg);
+} */
+
+/* 5. backface-visibility */
+img{
+  width: 300px;
+  border:1px solid lightgray;
+  transition: 1s;
+  
+/*   이미지가 반전된 상태 */
+  transform: perspective(400px) rotateY(180deg);
+  
+/*   요소가 사라짐 */
+/*   뒷면이 나오는 시점에 요소가 보이지 않게 하겠다 설정해서(hidden) */
+/*   backface-visibility: hidden;; */
+}
+

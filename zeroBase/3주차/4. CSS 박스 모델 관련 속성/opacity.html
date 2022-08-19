@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+<body>
+ <div class="parent">
+  <div class="child">1</div>
+  <div class="child">2</div>  
+</div>
+  <style>
+    .parent {
+      width: 300px;
+      height: 250px;
+      background: blue;
+    }
+
+    .parent .child {
+      width: 150px;
+      height: 100px;
+      background: tomato;
+      font-size:50px;
+
+      /*50%의 투명도*/
+    /*   opacity: .5; */
+
+      /*75%의 투명도*/
+    /*   opacity: .75; */
+
+        /*0의 투명도*/
+    /*   opacity: 0; */
+
+      opacity: 1;
+    }
+
+    .parent .child:nth-child(1){
+      /*보이지만 않는 개념*/
+      opacity: 0;
+
+    /*   없어지는 개념 */
+    /*   display: none; */
+    }
+  </style>
+</body>
+</html>

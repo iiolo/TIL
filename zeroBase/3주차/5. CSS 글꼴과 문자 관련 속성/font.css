@@ -1,0 +1,50 @@
+/* body { */
+/*   기준으로 삼는 크기를 16px에서 변경하고 싶을 때 */
+/*   font-size : 14px; */
+/* } */
+
+/* font, font-style */
+/* p {
+  font-size:40px;
+  font-style:italic;
+}
+ */
+
+/* div { */
+/*   기존(기준으로 삼는 크기는 16px)보다 작게 */
+/*   font-size : 14px; */
+/*   font-size:20px;
+} */
+
+/* div {
+  font-size:30px; */
+  
+/*   크기가 변화하는 것에 영향을 받지 않는다. */
+/*   line-height:1.4; */ /*1.4-1.7 적당*/ 
+  
+  
+  /*  font size 명시 안했을 경우 16px의 두배 */
+/*   line-height: 32px; */
+/*   line-height: 2; */
+/* } */
+
+/* font-family */
+div{
+  font-size: 60px;
+}
+
+.serif{
+  font-family: serif;/*후보생략 serif 계열 입력*/
+}
+
+.san-serif {
+  font-family: san-serif;/*후보생략 san-serif 계열 입력*/
+}
+
+.monospace {
+  font-family: monospace;/*후보생략 monospace 계열 입력*/
+}
+
+.cursive {
+  font-family : cursive;/*후보생략 cursive 계열 입력*/
+}

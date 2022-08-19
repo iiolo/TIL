@@ -1,0 +1,150 @@
+// 변수
+// $color-primary: #e96900;
+// $url-images: "/assets/images/";
+// $w: 200px;
+
+// .box {
+//   width: $w;
+//   margin-left: $w;
+//   background: $color-primary url($url-images + "bg.jpg");
+// }
+
+// 논리 연산
+// $w:100px;
+// .item {
+//     display:block;
+//     // if 조건문
+//     @if($w > 50px and $w > 90px) {
+//         width:400px;
+//     }
+    
+//     @if($w > 50px or $w < 90px) {
+//         width:400px;
+//     }
+    
+//     @if not ($w < 50px) {
+//         width:400px;
+//     }
+    
+//      @if not ($w > 50px) {
+//         width:400px;
+//     }
+// }
+
+// 재활용
+@mixin size ($w, $h) {
+    width:$w;
+    height:$h;
+    
+}
+
+.box1 {
+    @include: size (100px, 100px);
+}
+
+@mixin large-text {
+    font: {
+        size: 22px;
+        weight: bold;
+        family: sans-serif;
+    }
+    color:orange;
+
+
+    &::after {
+        .content: "!!"
+    }
+
+    span.icon {
+        background : url("/image/icon.png");
+    }
+}
+
+.box1 {
+    @include large-text;
+}
+
+.box2 {
+    @include large-text;
+}
+
+// 가변 인수
+@mixin var($w, $h, $bg...) {
+    width:$w;
+    height:$h;
+    background: $bg;
+}
+
+.box {
+    // @include var(1,2,3,4,5,6,7);
+    // background 다중 이미지 삽입
+    @include var(
+        100px,200px,
+        url("image/a.png") no-repeat 10px 20px, 
+        url("image/b.png") no-repeat,
+        url("image/c.png") no-repeat
+    );
+}
+
+// @content
+@mixin icon ($url) {
+    // 선택자 참조
+    &::after {
+        content: $url;
+        @content
+    }
+}
+
+.box1 {
+    @include icon("image/icon.png");
+}
+
+.box2 {
+    @include icon("image/icon.png"){
+        display:block;
+        position:absolute;
+        width:100px;
+        height:100px;
+    };
+}
+
+// @extend
+.btn {
+    padding: 10px;
+    margin: 10px;
+    background: blue;
+}
+
+.btn-danger {
+    @extend: .btn;
+    background: red;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    background: red;
+    
+    .item {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        
+        .icon {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    }
+}
+
+// .new-icon {
+//     @extend .icon;
+// }
+
+.wrapper {
+    .new-icon {
+        @extend .icon;
+    }
+
+}

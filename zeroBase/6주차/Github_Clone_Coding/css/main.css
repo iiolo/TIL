@@ -1,0 +1,700 @@
+
+/* body { */
+    /* roboto 폰트 적용 안나올 경우 sans serif 적용 */
+    /* font-family: 'Roboto', sans-serif;
+    font-size: 100px;
+} */
+
+
+/* COMMON */
+.body__container {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+    /* normal */
+    font-weight: 400;
+    color: #333;
+}
+
+  a {
+    text-decoration: none;
+  }
+
+/* BTN */
+.btn { 
+  /*   width: 300px; */
+  /*   height: 60px; */
+  /*   height: 30px; */
+    height: 34px;
+    
+  /*   흰색에 가까운 색,red에서 blue로 변화하는 튀어 나온 것처럼 그라데이션(아래값을 향하는 방향) 추가 */
+  /*   background: #eee linear-gradient(to bottom, red, blue); */
+    
+    background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    
+  /*   텍스트 중앙 정렬 */
+  /*   block 요소 처럼 만들어져서 가로 사이즈 auto(100%와 유사) */
+    /* display: flex; */
+    
+  /*   inline 요소 처럼 그 안에 들어있는 content의 너비만큼 가로 축소 */
+    /* display: inline-flex; */
+    display: flex;
+    
+  /*   수직 가운데 정렬 */
+    align-items: center;
+    
+    padding: 0 12px;
+    
+    font-size: 14px;
+    font-weight: 500;
+    
+  /*   줄간격(행간격) */
+    line-height: 1.5;/*1.5배*/
+    
+  /*   마우스 올렸을 때 커서가 손가락 모양으로 변경 */
+    cursor: pointer;
+    
+    box-sizing: border-box;
+    
+  /*   position 값 없는데 추가하는 경우에는 relative 값으로 추가 */
+    position: relative;
+
+    color: #333;
+    
+}
+  
+  /* 마우스가 버튼 위에 올라가 있다는 것을 버튼을 통해 표현해 주고 싶을 때 */
+  .btn:hover::before {
+    content:"";
+    
+  /*   이버튼의 절대위치 사용(부모요소에 position 값 있는지 확인 후 작성)*/
+    position: absolute;/*부모요소 배치 기준*/
+    top: 0;
+    left: 0;
+    width: 100%; /*부모요소의 가로너비 전체 사용*/
+    height: 100%;/*부모요소의 세로너비 전체 사용*/
+    
+  /*   검정색을 사용하되 투명도는 0.07퍼센트 사용 */
+    background: rgba(0,0,0,0.07);
+  }
+  
+  /* 기본적인 상태를 가지고 있는 버튼 */
+  .btn.btn--primary {
+    border: 1px solid #65b836;
+    color: #fff;
+    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+  }
+
+/* INPUT TEXT */
+.input--text{
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow:inset 0 1px 2px rgba(0,0,0,0.075);
+    font-size: 16px;
+}
+
+  .input--text:focus {
+      border-color: #51a7e8;
+
+    /*  다중 그림자 입력 */
+      box-shadow:inset 0 1px 2px rgba(0,0,0,0.075), 
+                    0 0 5px rgba(81, 167, 232, 0.5);
+  }
+
+  /* Vendor Prefix */
+  .input--text::webkit-input-placeholder {
+  color: #cacaca;
+  }
+
+  .input--text::ms-input-placeholder {
+      color: #cacaca;
+  }
+
+  .input--text::moz-input-placeholder {
+      color: #cacaca;
+  }
+
+/* FLOAT CLEARFIX  */
+/* float 속성 공통정의 */
+ /* 부모요소 float 속성 해제 */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+  /* float:left 속성 가질 요소 */
+.float--left {
+  float: left;
+}
+  /* float:right 속성 가질 요소 */
+.float--right {
+  float: right;
+}
+
+/* SUMMARY*/
+.summary {
+
+}
+
+.summary__title{
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+
+
+}
+
+.summary__description{
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+
+}
+
+/* SECTION & INNER */
+.section {
+  position: relative;
+}
+
+.section .inner {
+  max-width: 980px;
+  margin: 0 auto;
+
+  /* padding과 border 들어갔을 때 요소가 커지지 않게 방지 */
+  box-sizing: border-box;
+
+  /* inner 기준 배치 */
+  position: relative;
+}
+
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0,0,0,.75);
+    box-shadow: 0 0 5px rgba(0,0,0,.75);
+    background: #fff;
+}
+
+
+/* menu-group과 sign-group의 부모요소 */
+header .inner {
+
+  
+  /* 최대 너비가 980이고 그 이하로는 변동 될 수 있다. */
+  /* max-width: 980px; */
+  /* 980px 가로너비의 영역이 가운데 정렬 */
+  /* margin: 0 auto; */
+
+  /* header 높이 지정 */
+  height: 78px;
+
+  
+
+}
+
+/* header의 왼쪽 콘텐츠 */
+header .menu-group {
+  /* 로고와 메인메뉴 그룹 수평 정렬 */
+  display: flex;
+
+  /* header 안에서 메인 메뉴 그룹 수직 가운데  정렬 */
+  align-items: center; /*메뉴그룹 높이의 수직정렬*/
+
+  /* 부모요소 inner의 영향을 받아서 inner 높이 78px의 100%만큼의 높이 가짐 */
+  height: 100%;
+
+  
+  /* header 왼쪽 배치(공통속성으로 정의) */
+  /* float: left; */
+}
+
+header .logo {
+  margin-right: 10px;
+}
+
+header .logo a{
+  background: url("../img/logo.svg");
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -9999px;
+}
+
+header .logo a:hover {
+  background: url("../img/logo_on.svg");
+}
+
+
+header .main-menu {
+  /* 메인 메뉴 수평정렬 */
+  display: flex;
+  
+}
+
+header .main-menu li a{
+  display: block;
+  padding: 10px;
+  color: #3c4146;
+
+}
+
+header .main-menu li a:hover{
+  color: #4078c0;
+}
+
+  /* header 오른쪽 콘텐츠 */
+header .sign-group{
+  display: flex;
+
+  /* header 오른쪽 배치(공통속성으로 정의) */
+  /* float: right; */
+
+  /* header 가운데 수직 정렬 */
+  align-items: center;
+  height: 100%;
+}
+
+
+  /* 화면 클시 서브메뉴>search양식>버튼 순서 */
+header .btn-group {
+  order: 2;
+
+  /* 띄어쓰기 제거 및 수평정렬 */
+  display: flex;
+}
+
+header .btn-group .sign-in {
+    /* 버튼 사이 공간 제어 */
+    margin-right: 4px;
+}
+
+#search-form {
+  order: 1;
+  margin-right: 12px;
+}
+
+#search {
+    width: 160px;
+    font-size: 14px;
+}
+
+    /* id="search"을 가지는 요소의 다음 형제 요소 중 type="submit"을 가지는 요소 선택 */
+#search + [type="submit"] {
+    /* submit 버튼 화면상에서 사라지게 */
+   display: none;
+}
+
+header .sub-menu{
+  /*order: 0;*/
+    /* 수평정렬 */
+    display: flex;
+    margin-right: 10px;
+}
+
+header .sub-menu li a {
+    padding: 8px;
+    display: block;
+    font-size: 13px;
+    color: #3c4146;
+}
+
+header .sub-menu li a:hover {
+    color: #4078c0;
+}
+
+#toggle-btn{
+  /* 일반적인 상황에는 없음 */
+  display: none;
+
+  /* toggle-btn 미리 정의 */
+  background: url("../img/toggle-btn.svg");
+
+    /* 토글 이미지 사이즈 지정 */
+    width: 18px;
+    height: 24px;
+    
+    /* toggle-btn 부모요소(inner) 기준 배치 */
+    position: absolute;
+
+    top: 16px;
+    right: 20px;
+
+    /* 커서포인트 손가락 모양으로 바꿔주기 */
+    cursor: pointer;
+
+    /* #toggle-btn 안 콘텐츠를 대체 텍스트화 */
+    text-indent: -9999px;
+  
+}
+
+/*VISUAL*/
+/* section 정의 */
+.section--visual {
+  position: relative;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+
+  /* 화면 커져도 배경이미지 안잘리게 하기 */
+  background-size: cover;
+}
+
+/* 배경 앞 어두운 요소 깔아서 배경 어둡게 만들기 */
+.section--visual::before {
+  content: "";
+
+  /* 절대위치 만들어주기 */
+  /* width: 100%;
+  height: 100%; 와 동일한 효과 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 어두운 배경 */
+  background: rgba(0,0,0,.3);
+}
+
+.section--visual .inner {
+  /* 화면 중앙정렬 */
+  /* max-width: 980px;
+  margin: 0 auto; */
+
+  /* 위아래 여백 추가 */
+  padding: 160px 0;
+
+  /* 텍스트 영역과 양식 영역 수평 정렬 */
+  display: flex;
+
+}
+
+.section--visual .summary{
+  /* 단축속성 flex : flex-grow(기본값: 0) flex-shrink(기본값: 1) flex-basis(기본값:1); */
+  flex: 1;
+
+  /* 개별 속성 flex */
+  /* 전체 영역 가변하는 것 대비해서 나머지 영역을 1의 비율로 차지 */
+  /* flex-grow: 1; */
+  /* form 영역이 쪼그라드는 문제점 해결 */
+  /* flex-basis: 0; */
+
+  /* summary 영역과 form 영역 사이 공백 생성 */
+  margin-right: 90px;
+
+  
+}
+
+.section--visual .summary__title {
+  color: #fff;
+  font-size: 54px;
+
+  /* 첫번째 그림자는 블러가 1px이라 뒷쪽배경과 구분된 느낌이 나지만 은은한 효과 */
+  text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+               0 1px 25px rgba(0, 0, 0, .75);
+
+}
+
+.section--visual .summary__description {
+  color: #fff;
+
+  /* 첫번째 그림자는 블러가 1px이라 뒷쪽배경과 구분된 느낌이 나지만 은은한 효과 */
+  text-shadow: 0 1px 1px rgba(0,0,0,.25), 
+               0 1px 25px rgba(0, 0, 0, .75);
+}
+
+#sign-form {
+  /* form의 고정너비 설정 */
+  width: 340px;
+
+  /* 내리기 위해 위쪽 여백 추가 */
+  margin-top: 16px;
+}
+
+#sign-form li{
+  /* li 태그 간의 여백 생성 */
+  margin-bottom: 17px;
+
+  
+}
+
+#sign-form li:last-child{
+  /* 마지막 li 태그 밑 여백 제거 */
+  margin-bottom: 0;
+}
+
+#sign-form .input--text {
+  width: 100%;
+  height: 40px;
+
+}
+
+#sign-form .caption{
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#sign-form [type="submit"]{
+  width: 100%;
+  height: 62px;
+  padding: 0 25px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+/* FEATURE */
+.section--feature {
+  background: #f5f5f5;
+  padding-top: 66px;
+}
+
+.section--feature .summary {
+  /* 820px 안에서는 가변하는 가로 너비 정의 */
+  max-width: 820px;
+
+  /* 가운데 정렬 */
+  margin: 0 auto;
+
+  /* 텍스트 가운데 정렬 */
+  text-align: center;
+
+}
+
+.section--feature .video {
+  /* 가로너비 650px 이하시 사이즈 자동생성ㄴ */
+  max-width: 650px;
+
+  /* 가운데 정렬을 하면서도 위아래 50px 여백 주기 */
+  margin: 50px auto;
+  
+}
+
+.section--feature .video .video-ratio {
+  height: 0;
+
+  /* 50:x=16:8 에서 x값을 %단위로 입력s */
+  padding-top: 56.25%;
+
+  /* iframe의 부모요소임을 확인 */
+  position: relative;  
+}
+
+.section--feature .video .video-ratio iframe {
+  /* 부모요소 기준 배치 */
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+
+  /* 부모요소의 사이즈에 맞게 iframe(동영상)이 가득 차게 하기 */
+  width: 100%;
+  height: 100%;
+
+}
+
+.section--feature .tiles {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+
+}
+
+.section--feature .tiles .inner {
+  /* section inner max-width 값 위에 덮어씌우기 */
+  max-width: 1200px;
+}
+
+/* grid 사용해서 4개 컬럼 구성시 */
+/* .section--feature .tiles ul { */
+  /* grid-container로 만들기 */
+  /* display: grid; */
+
+  /* 4개의 column을 가지는 grid 생성 */
+  /* grid-template-columns: repeat(4, 1fr);
+  
+} */
+
+/* float 사용시 */
+.section--feature .tiles ul {
+
+
+}
+
+
+.section--feature .tiles li {
+  /* 위아래 34 좌우 24 내부 여백 추가 */
+  padding: 34px 24px;
+
+  /* 텍스트 중앙 정렬 */
+  text-align: center;
+
+  /* 읽기 좋게 행간 추가 */
+  line-height: 1.5;
+
+  /* 아이템 사이 선 추가 */
+  border-right: 1px solid #e5e5e5;
+
+  /* 선 추가 시 공간 커짐 방지 */
+  box-sizing: border-box;
+
+
+  /* float 사용시 */
+  float: left;
+
+    /* 4개의 column이니까 100%/4=25% */
+  width: 25%;
+}
+
+.section--feature .tiles li:last-child {
+  border-right: none;
+}
+
+/* 이미지 태그 정의 */
+.section--feature .tiles li img {
+
+  /* 부모요소에 크기 맞추기 */
+  max-width: 100%;
+
+  /* 내부여백 추가 */
+  padding: 14px 10% 24px;
+
+  /* padding을 통해 커지지 않도록 방지 */
+  box-sizing: border-box;
+}
+
+.section--feature .tiles li h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.section--feature .tiles li p {
+  font-size: 14px;
+  color: #767676;
+}
+
+/* WHERE IS */
+.section--where-is .inner{
+  /* 위쪽 여백 추가 */
+  padding-top: 80px;
+}
+
+#map{
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-bottom: none;
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  box-sizing: border-box;
+
+}
+
+/* PRICING CARD */
+.section--pricing{
+
+  /* 배경 위쪽에서 아래쪽으로 그라데이션 색상 */
+  background: linear-gradient(#f5f5f5,#fff);
+
+}
+
+.section--pricing .inner {
+  padding: 80px 0;
+}
+
+.section--pricing .card {
+  /* 버튼과 텍스트 수평화 */
+  display: flex;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.section--pricing .card .cell{
+  padding: 24px;
+  display: flex;
+
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+
+  /* 수직 가운데 정렬 */
+  align-items: center;
+}
+
+.section .pricing .card .cell1 .btn{
+  height: 56px;
+  font-size: 16px;
+}
+
+.section--pricing .card .cell2 {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+
+  /* 텍스트 칸 유연하게 변화 */
+  flex: 1; /*flex-basis 0인 상태*/
+
+   border-left: 1px solid #e5e5e5;
+}
+
+/* FOOTER */
+footer {
+
+}
+
+footer .inner {
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+}
+
+footer .site-links{
+  display: flex;
+}
+
+footer .site-links li {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #767676;
+}
+
+footer .site-links li a{
+  color: #4078c0;
+}
+
+footer .site-links li a:hover {
+  /* 밑줄 삽입 */
+  text-decoration: underline;
+}
+
+footer .logo {
+  position: absolute;
+
+  /* 가운데 배치 */
+    /* 전체 영역 다 사용하는 개념 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    /* 가운데 */
+  margin: auto;
+    /* 요소 크기 설정 */
+  width: 24px;
+  height: 24px;
+}
+
+footer .logo:hover svg{
+    fill: #4078c0;
+
+}
+
+
+

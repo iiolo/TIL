@@ -1,0 +1,33 @@
+/* 코드 구현 */
+.container {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+input {
+    border: none;
+}
+
+ul{
+    list-style: none;
+  }
+.dark-check{
+
+}
+
+.dark-mode {
+
+}
+
+
+
+.input-todo {
+    border-bottom: 2px solid gray;
+}

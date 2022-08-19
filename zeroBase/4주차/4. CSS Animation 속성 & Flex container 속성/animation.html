@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    
+</head>
+<body>
+  <div class="box"></div>
+  <style>
+    .box {
+    width: 100px;
+    height: 100px;
+    background:tomato;
+
+  }
+
+  /* 마우스를 hover했을 때keyframes로 정의된 애니메이션이 적용됨 */
+  .box:hover {
+  /*   단 1회에 걸쳐서 */
+  /*   animation: first-animation 2s; */
+
+  /*   무한반복 */
+  /*    animation: first-animation 2s infinite; */
+
+  /*   원상복귀 후 다시 애니메이션 시작 */
+    animation: first-animation 2s infinite alternate;
+
+  }
+
+  /* keyframes 선언 */
+  @keyframes first-animation {
+  /*   첫번째 프레임 */
+    0% {
+      width: 100px;
+    }
+
+  /*   마지막 프레임 */
+    100% {
+      width: 500px;
+    }
+  }
+
+  </style>
+</body>
+</html>

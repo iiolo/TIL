@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid item 함수</title>
+    
+</head>
+<body>
+   <!-- fit-content -->
+  <div class="container">
+  <!--   <div class="item">Hello LAURA~</div> -->
+  <!--   첫번째 열이 가장 큰 너비는 H서부터 o까지 -->
+    <div class="item">Hello</div>
+
+    <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. </div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    
+   <style>
+     .container {
+  border: 10px solid lightgray;
+  
+  display: grid;
+  
+  /*   100px의 두개 행 생성 */
+    grid-template-rows: 100px 100px;
+
+  /*   100px의 두개 열 생성 */
+  /*   grid-template-columns: 100px 100px; */
+
+  /*   content에 맞추는 개념 */
+  /*   grid-template-columns: fit-content(300px) fit-content(300px); */
+
+  /*   두번째 열의 두번째 item이 가지고 있는 이 contents의 최대 너비에 맞게 구성 */
+     grid-template-columns: fit-content(300px) fit-content(100%);
+  }
+
+  .item {
+    border: 10px solid red;
+  }
+  </style>
+</div>
+</body>
+</html>

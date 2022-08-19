@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2d 변환속성</title>
+    
+</head>
+<body>
+  <div class="box">123</div> 
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      margin: 100px;
+      background: tomato;
+
+    /*   가운데 축을 중심으로 45도 회전 */
+    /*   transform: rotate(45deg); */
+
+      /*   요소를 좀더 자세히 보기 위해 작업 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+
+    /*   90도 회전 */
+    /*   transform: rotate(90deg); */
+
+    /*   x축만큼 100px 이동 */
+    /*   transform: translate(100px); */
+
+    /*   x축에서 100px 이동 y축에서 30px 이동 */
+    /*   transform: translate(100px , 30px); */
+
+      /*   이동 시켜서 배치하는 개념일 경우postion을 통해 translate와 동일한 효과 가능 */
+    /*   position: relative;
+      left: 100px;
+      top: 30px; */
+
+    /* transition은 요소가 바뀌기 전 상태에 입력하는 것이 일반적이다. */
+      transition: 1s;
+
+    /*   position으로 애니메이션 만들시 position 초기화 시켜줘야 함 */
+    /*   position: relative;
+      left: 0;
+      top: 0; */
+    }
+
+    /* 마우스 가져다 댔을 때 변화 */
+    .box:hover {
+    /*   position: relative;
+      left: 30px;
+      top: 30px; */
+
+    /*   transform을 이용하여 애니메이션에 특화 */
+    /*   transform: translate(30px, 30px); */
+
+    /*   scale */
+    /*  크기가 1.5배 커짐  */
+    /*   transform: scale(1.5); */
+
+    /*   크기가 0.8배 되서 작아짐 */
+    /*   transform: scale(.8); */
+
+    /*   skew */
+    /*   45도 각도로 x축으로 비틀어짐 */
+    /*   transform: skewX(45deg); */
+
+    /*   y축 각도로 45도 비틀어지는 비틀어지는 방향이 반대로 됨 */
+    /*   transform: skewY(-45deg); */
+
+      /*   요소를 마름모 형태로 만들 수 있다 */
+    /*   transform: skewX(20deg); */
+
+    /*   이동과 비틀임 동시에 */
+      transform: translate(20px, 10px) skewX(20deg);
+    }
+  </style>
+</body>
+</html>
