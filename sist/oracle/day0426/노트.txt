@@ -1,0 +1,89 @@
+select e.eno, e.ename, e.dno, dname,m.ename, substr(e.email,1,instr(e.email,'@')-1) e_id, substr(m.email,1,instr(m.email,'@')-1) m_id
+from emp e, emp m, dept d
+where e.dno = d.dno
+and e.mgr=m.eno
+and dname like '개발%';
+
+select e.eno,e.ename ename, m.ename mname, e.email e_email, m.email m_email, e.dno, dname, (e.salary+e.comm)*12 income
+from emp e, emp m, dept d
+where e.dno =d.dno
+and dloc ='서교동'
+and e.mgr = m.eno
+and (substr(e.jumin,instr(e.jumin,'-')+1,1) = '2' or substr(e.jumin,instr(e.jumin,'-')+1,1) = '4')
+order by e.dno, e.ename;
+
+select e.eno, e.ename, substr(e.email,1,instr(e.email,'@')-1) e_id, rpad(substr(e.jumin,1,8),14,'*') e_jumin, lpad((e.salary+e.comm),10,0) income
+from emp e, emp m
+where e.mgr = m.eno
+and m.ename = '김한희'
+order by income desc, e.ename;
+
+select substr(name,1,1),count(*)
+from customer
+group by substr(name,1,1);
+
+select substr(ename,1,1),count(*)
+from emp
+group by substr(ename,1,1);
+
+select e.eno, e.ename, e.dno, dname, m.ename mname, 
+rpad(substr(e.jumin,1,8),14,'*') e_jumin
+from emp e, emp m, dept d
+where e.dno =d.dno
+and e.mgr = m.eno
+and substr(e.jumin,3,2) = to_char(sysdate,'mm')
+order by mname, e.ename;
+
+
+ select orderid, c.custid, name, b.bookid, bookname, publisher,orderdate, (orderdate + 10) checkdate
+ from customer c, orders o, book b
+ where c.custid = o.custid
+ and o.bookid = b.bookid
+ order by checkdate desc, orderid;
+ 
+ select orderid,to_char(orderdate, 'yyyy-mm-dd') , c.custid, b.bookid, bookname
+ from customer c, book b, orders o
+ where c.custid = o.custid
+ and o.bookid = b.bookid
+ and to_char(orderdate, 'yyyymmdd') ='20220407';
+ 
+ select e.eno, e.dno, dname, e.ename, m.ename mname, e.hiredate,
+ round(months_between(sysdate,e.hiredate)) emonths, 
+ rpad(substr(e.jumin,1,8),14,'*') e_jumin,
+ round((e.salary+e.comm)*12*0.5) present
+ from emp e, emp m, dept d
+where e.dno = d.dno
+and e.mgr = m.eno
+and round(months_between(sysdate,e.hiredate)) >= 60 
+order by emonths desc, e.ename;
+
+select e.eno, e.dno, dname, e.ename, m.ename mname, e.hiredate,
+ round(months_between(sysdate,e.hiredate)) emonths, 
+ rpad(substr(e.jumin,1,8),14,'*') e_jumin,
+ round((e.salary+e.comm)*12*0.5) bonus
+ from emp e left outer join emp m on e.mgr = m.eno
+ left outer join dept d
+ on e.dno = d.dno
+ where round(months_between(sysdate,e.hiredate)) >= 60
+ order by emonths desc, e.ename;
+ 
+ select ename, jumin, 
+ decode(substr(jumin,instr(jumin,'-')+1,1),'1','남','3','남','2','여','4','여','해당없음') gender
+ from emp;
+ 
+ select eno, ename, jumin,
+to_char(sysdate,'yyyy')-
+(substr(jumin,1,2) + 
+(select decode(substr(jumin,8,1)
+,'1',1900,'2',1900,
+'3',2000,'4',2000) from emp e2 where e1.eno = e2.eno)) age
+from emp e1;
+
+
+insert into emp(eno,ename,dno,salary,comm) values(1019,'홍길동',10,0,0);
+insert into emp(eno,ename,dno,salary,comm) values(1020,'김유신',10,null,null);
+
+ 
+
+
+ 
