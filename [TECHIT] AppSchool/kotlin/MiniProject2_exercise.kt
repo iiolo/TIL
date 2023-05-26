@@ -93,13 +93,13 @@ class Menu() {
         while(true){
 
             try {
-                //날짜 리스트 생성(exercise 객체 리스트에서 날짜만 뽑아서 중복처리하고 오름차순 정렬해서 새로운 리스트로 생성)
+                //날짜 리스트 생성(C:\myfile 내에 있는 디렉토리및 파일들 목록 리스트화(오름차순 정렬, 중복제거)
                 val dayList = File("C:\\myfile\\").listFiles().distinct().sorted()
 
 
                 // 날짜 리스트 보여주기
                 for(i in dayList.indices){
-                    val temp = dayList[i].toString().split("\\")
+                    val temp = dayList[i].toString().split("\\")//dayList에 들어있는 C:\myfile\날짜 형식으로 되어 있는 요소에서 날짜만 뽑아오기
                     println("${i+1} : ${temp[temp.size-1]}")
                 }
 
@@ -113,14 +113,17 @@ class Menu() {
                     println()
                     running()
                 }
-
+                
+                //dayList의 inputDayNum인덱스 위치에 속한 요소인 C:\myfile\날짜 를 \를 기준으로 나눠서 리스트화 
                 var temp2 = dayList[inputDayNum-1].toString().split("\\")
 
                 // 날짜에 맞는 운동 기록 출력
-                println("${temp2[temp2.size-1]}의 운동 기록 입니다.") // 사용자에게 보여준 날짜 번호 = 실제 리스트 번호+1
+                println("${temp2[temp2.size-1]}의 운동 기록 입니다.") // temp2에서 날짜만 뽑아오기
 
-                val dayList2 = File(dayList[inputDayNum-1].toString()+"\\").listFiles()
+                // 해당 날짜 폴더에 들어있는 파일들의 경로 리스트화
+                val dayList2 = File(dayList[inputDayNum-1].toString()+"\\").listFiles()// 사용자에게 보여준 날짜 번호 = 실제 리스트 번호+1
 
+                // 파일 내 작성된 것들 한 줄씩 출력
                 for(e in dayList2 ){
                     val eFilePath = e.toString()
 //                    println(eFilePath)
@@ -146,11 +149,12 @@ class Menu() {
     fun createFile(e:Exercise){
         val filePath = "/myfile/${e.today}"
         val dir = File(filePath)
-        val formatter = DateTimeFormatter.ofPattern("yyMMddHHmmss")
-        val date = LocalDateTime.now().format(formatter)
+        val formatter = DateTimeFormatter.ofPattern("yyMMddHHmmss")//어떤 형식
+        val date = LocalDateTime.now().format(formatter)//formatter의 형식으로 변환
         val filename = "${date}.txt"
         val content = "운동 종류 : ${e.type}\n횟수 : ${e.time}\n세트 : ${e.set}"
 
+        // dir이 존재 안할 시 상위폴더에 dir 생성
         if(!dir.exists()){
             dir.mkdirs()
         }
